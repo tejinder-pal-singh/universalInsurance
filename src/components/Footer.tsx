@@ -2,10 +2,10 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-white">
+    <footer className="bg-stone">
       <div className="mx-auto max-w-screen-xl px-10 py-16 lg:px-8">
         <div className="lg:flex lg:items-start lg:gap-8">
-          <div className="text-teal-600">
+          <div className="text-secondary">
             <svg
               className="h-8"
               viewBox="0 0 28 24"
@@ -35,21 +35,14 @@ export const Footer = () => {
 
             <div className="col-span-2 lg:col-span-3 lg:flex lg:items-end">
               <form className="w-full">
-                <label htmlFor="UserEmail" className="sr-only">
-                  {" "}
-                  Email{" "}
-                </label>
-
-                <div className="border border-gray-100 p-2 focus-within:ring sm:flex sm:items-center sm:gap-4">
+                <div className="button email w-full text-sm md:text-lg  lg:text-xl  flex items-center h-min bg-white rounded-r-lg ">
                   <input
-                    type="email"
-                    id="UserEmail"
-                    placeholder="john@rhcp.com"
-                    className="w-full border-none focus:border-transparent focus:ring-transparent sm:text-sm"
+                    type="text"
+                    placeholder="Enter your email"
+                    className="lg:w-9/12 w-8/12 h-full p-4 appearance-none focus:appearance-none active:appearance-none  "
                   />
-
-                  <button className="mx-auto call p-4 rounded-r-lg w-fit rounded-bl-lg bg-sky-600 text-white">
-                    sign up
+                  <button className="flex-grow h-full p-4 rounded-r-lg rounded-bl-lg bg-secondary text-white">
+                    Sign up
                   </button>
                 </div>
               </form>

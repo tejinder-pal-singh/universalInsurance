@@ -45,7 +45,7 @@ const textReveal: Variants = {
 };
 export const HeroSection = () => {
   return (
-    <div className="flex relative flex-col lg:h-[750px] bg-green-500">
+    <div className="flex relative flex-col lg:h-[750px] bg-primary">
       <div className="blob absolute h-full w-full backdrop-blur-3xl z-10"></div>
 
       <motion.div
@@ -66,7 +66,7 @@ export const HeroSection = () => {
 function BlobBackground() {
   return (
     <>
-      <div className="blob  absolute left-1/2 top-1/2 [translate:-50%-60%] opacity-30 h-full aspect-square rounded-full bg-gradient-to-r from-yellow-400 to-green-500 animate-rotate "></div>
+      <div className="blob  absolute left-1/2 top-1/2 [translate:-50%-60%] opacity-30 h-full aspect-square rounded-full bg-gradient-to-r from-yellow to-primary animate-rotate "></div>
     </>
   );
 }
@@ -80,11 +80,11 @@ function HeroContent() {
         variants={textParent}
         className=" lg:w-1/2 h-full gap-8 lg:gap-14 flex flex-col"
       >
-        <motion.div className="text-xl md:text-2xl lg:text-4xl xl:text-6xl 2xl:text-7xl items-center lg:items-start text-white flex flex-col gap-5 lg:gap-14">
+        <motion.div className="text-xl font-semibold md:text-2xl lg:text-4xl xl:text-6xl 2xl:text-7xl items-center lg:items-start text-white flex flex-col gap-5 lg:gap-14">
           <motion.div variants={textReveal} className="text1">
             The best way
           </motion.div>
-          <motion.div variants={textReveal} className="text1 flex ">
+          <motion.div variants={textReveal} className="text1  flex ">
             to get
             <motion.span variants={textReveal} className="relative">
               <span
@@ -103,12 +103,11 @@ function HeroContent() {
           className="button email w-full text-sm md:text-lg  lg:text-xl  flex items-center h-min bg-white rounded-r-lg "
         >
           <input
-            autoFocus
             type="text"
             placeholder="Enter your email"
             className="lg:w-9/12 w-8/12 h-full p-4 appearance-none focus:appearance-none active:appearance-none  "
           />
-          <button className="flex-grow h-full p-4 rounded-r-lg rounded-bl-lg bg-indigo-950 text-white">
+          <button className="flex-grow h-full p-4 rounded-r-lg rounded-bl-lg bg-secondary text-white">
             Get insurance plan
           </button>
         </motion.div>

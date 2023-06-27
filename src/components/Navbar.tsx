@@ -30,13 +30,11 @@ const Navbar = ({ invisible }: { invisible?: boolean }) => {
       <motion.div variants={appearAnimate} className="logo">
         <Link to={"/"}> logo</Link>
       </motion.div>
-      <div className="links gap-24 flex items-baseline justify-between">
+      <div className="links font-semibold gap-24 flex items-baseline justify-between">
         <motion.div variants={appearAnimate} className="Learn">
           <NavLink
             to={"/services"}
-            className={({ isActive, isPending }) =>
-              isPending ? "text-black" : isActive ? "text-green-500" : ""
-            }
+            className={({ isActive }) => (isActive ? "text-primary" : "")}
           >
             Services
           </NavLink>
@@ -44,9 +42,7 @@ const Navbar = ({ invisible }: { invisible?: boolean }) => {
         <motion.div variants={appearAnimate} className="pricing">
           <NavLink
             to={"/about"}
-            className={({ isActive, isPending }) =>
-              isPending ? "text-black" : isActive ? "text-green-500" : ""
-            }
+            className={({ isActive }) => (isActive ? "text-primary" : "")}
           >
             About
           </NavLink>
@@ -54,15 +50,13 @@ const Navbar = ({ invisible }: { invisible?: boolean }) => {
         <motion.div variants={appearAnimate} className="help">
           <NavLink
             to={"/contact"}
-            className={({ isActive, isPending }) =>
-              isPending ? "text-black" : isActive ? "text-green-500" : ""
-            }
+            className={({ isActive }) => (isActive ? "text-primary" : "")}
           >
             Contact
           </NavLink>
         </motion.div>
       </div>
-      <div className="buttons flex gap-8">
+      <div className="buttons font-semibold flex gap-8">
         <motion.button
           variants={appearAnimate}
           className="number p-4 rounded-r-lg rounded-bl-lg bg-white"
@@ -71,7 +65,7 @@ const Navbar = ({ invisible }: { invisible?: boolean }) => {
         </motion.button>
         <motion.button
           variants={appearAnimate}
-          className="call p-4 rounded-r-lg rounded-bl-lg bg-indigo-950 text-white"
+          className="call p-4 rounded-r-lg rounded-bl-lg bg-secondary text-white"
         >
           Get a quote
         </motion.button>

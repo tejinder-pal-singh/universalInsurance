@@ -14,7 +14,7 @@ export const SectionOne = () => {
   ];
   return (
     <>
-      <div className=" section px-10 py-10 lg:px-32 lg:py-40 min-h-min flex lg:flex-row flex-col gap-20 justify-between bg-red-100">
+      <div className=" section px-10 py-10 lg:px-32 lg:py-40 min-h-min flex lg:flex-row flex-col gap-20 justify-between bg-neutral">
         <div className="photo h-full  lg:w-2/4 w-full">
           <div className="  ">
             <img
@@ -44,7 +44,7 @@ export const SectionOne = () => {
           </div>
         </div>
       </div>
-      <div className="types lg:px-32 text-4xl px-10 py-10 lg:py-28 min-h-min flex flex-col gap-32 justify-between bg-green-500">
+      <div className="types lg:px-32 text-4xl px-10 py-10 lg:py-28 min-h-min flex flex-col gap-32 justify-between bg-primary">
         <div className="heading text-white lg:text-8xl">Insurance types</div>
         <div className="cardcontainer overflow-x-scroll flex gap-10  ">
           {insuranceTypes.map((e) => (

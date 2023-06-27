@@ -40,7 +40,7 @@ function Wordings({ big, small }: { big: string; small: string }) {
   return (
     <motion.div
       variants={revealWordings}
-      className="flex gap-3 items-baseline gap text-indigo-950"
+      className="flex gap-3 items-baseline gap text-secondary"
     >
       <div className="text-4xl">{big} </div>
       <motion.div variants={spanWordings} className="text-sm">
