@@ -25,7 +25,7 @@ const Navbar = ({ invisible }: { invisible?: boolean }) => {
       animate={"reveal"}
       className={`navbar ${
         invisible ? "invisible static" : "absolute"
-      }   top-0  z-30 text-lg h-30 py-10 items-center hidden  px-32 lg:flex w-full justify-between`}
+      }   top-0  z-30 text-lg h-30 py-10 items-center  px-32 lg:flex w-full justify-between`}
     >
       <motion.div variants={appearAnimate} className="logo">
         <Link to={"/"}> logo</Link>
