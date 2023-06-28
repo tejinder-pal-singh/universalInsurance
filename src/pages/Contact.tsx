@@ -2,23 +2,21 @@ import Navbar from "../components/Navbar";
 
 export const Contact = () => {
   return (
-    <section className="bg-green-100 relative dark:bg-gray-900 overflow-hidden">
+    <section className="bg-cool relative  overflow-hidden">
       <div className="blob absolute h-full w-full backdrop-blur-3xl z-10"></div>
 
-      <div className="blob  absolute left-1/2 top-1/2 [translate:-50%-60%] opacity-30 h-2/4 aspect-square rounded-full bg-gradient-to-r from-yellow-400 to-green-500 animate-rotate "></div>
+      <div className="blob  absolute left-1/2 top-1/2 [translate:-50%-60%] opacity-30 h-2/4 aspect-square rounded-full bg-gradient-to-r from-yellow to-primary animate-rotate "></div>
 
       <Navbar invisible />
       <div className="relative z-30 container px-6 py-12 mx-auto">
         <div>
-          <p className="font-medium z-20 text-blue-500 dark:text-blue-400">
+          <p className="text-3xl lg:text-7xl z-30 font-bold dark:text-secondary">
             Contact us
           </p>
 
-          <h1 className="mt-2 text-2xl z-20 font-semibold text-gray-800 md:text-3xl dark:text-white">
-            Chat to our friendly team
-          </h1>
+          <h1 className="mt-2 text-2xl z-20 ">Chat to our friendly team</h1>
 
-          <p className="mt-3 z-20 text-gray-500 dark:text-gray-400">
+          <p className="mt-3 z-20 ">
             We’d love to hear from you. Please fill out this form or shoot us an
             email.
           </p>
@@ -27,7 +25,7 @@ export const Contact = () => {
         <div className="grid z-20 grid-cols-1 gap-12 mt-10 lg:grid-cols-2">
           <div className="grid  grid-cols-1 gap-12 md:grid-cols-2">
             <div>
-              <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+              <span className="inline-block p-3 text-primary rounded-full bg-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -44,19 +42,17 @@ export const Contact = () => {
                 </svg>
               </span>
 
-              <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
+              <h2 className="mt-4 text-base font-medium text-primary ">
                 Email
               </h2>
-              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+              <p className="mt-2 text-sm ">
                 Our friendly team is here to help.
               </p>
-              <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">
-                hello@merakiui.com
-              </p>
+              <p className="mt-2 text-sm ">hello@merakiui.com</p>
             </div>
 
             <div>
-              <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+              <span className="inline-block p-3 text-primary rounded-full bg-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -78,19 +74,17 @@ export const Contact = () => {
                 </svg>
               </span>
 
-              <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
-                Live chat
+              <h2 className="mt-4 text-base font-medium text-primary ">
+                Messenger chat
               </h2>
-              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+              <p className="mt-2 text-sm ">
                 Our friendly team is here to help.
               </p>
-              <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">
-                Start new chat
-              </p>
+              <p className="mt-2 text-sm ">Start new chat</p>
             </div>
 
             <div>
-              <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+              <span className="inline-block p-3 text-primary rounded-full bg-white ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -112,7 +106,7 @@ export const Contact = () => {
                 </svg>
               </span>
 
-              <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
+              <h2 className="mt-4 text-base font-medium text-primary">
                 Office
               </h2>
               <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
@@ -124,7 +118,7 @@ export const Contact = () => {
             </div>
 
             <div>
-              <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
+              <span className="inline-block p-3 text-primary rounded-full bg-white ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -141,7 +135,7 @@ export const Contact = () => {
                 </svg>
               </span>
 
-              <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">
+              <h2 className="mt-4 text-base font-medium text-primary ">
                 Phone
               </h2>
               <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
@@ -153,7 +147,7 @@ export const Contact = () => {
             </div>
           </div>
 
-          <div className="p-4 py-6 rounded-lg bg-gray-50 dark:bg-gray-800 md:p-8">
+          <div className="p-4 py-6 rounded-lg bg-white dark:bg-gray-800 md:p-8">
             <form>
               <div className="-mx-2 md:items-center md:flex">
                 <div className="flex-1 px-2">
@@ -200,7 +194,7 @@ export const Contact = () => {
                 ></textarea>
               </div>
 
-              <button className="w-full px-6 py-3 mt-4 text-xl font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-green-500 rounded-r-lg rounded-bl-lg  hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+              <button className="w-full px-6 py-3 mt-4 text-xl font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-primary rounded-r-lg rounded-bl-lg  hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                 Send message
               </button>
             </form>
