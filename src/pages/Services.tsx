@@ -14,12 +14,13 @@ import { Link } from "react-router-dom";
 
 export const insuranceTypes = [
   {
-    icon: <CarIcon />,
-    imageUrl: carInsurance,
-    name: "Car Insurance",
+    icon: <HealthIcon />,
+    name: "Health Insurance",
+    imageUrl: healthInsurance,
     description:
-      "By investing in a comprehensive car insurance policy, you can protect yourself from financial loss and ensure that you’re able to get back on the road as quickly as possible after an accident or other covered event.",
+      "Help protect yourself from regular health and dental costs and the expenses associated with disability, critical illness and long term care.",
   },
+
   {
     icon: <LifeIcon />,
     name: "Life Insurance",
@@ -35,11 +36,11 @@ export const insuranceTypes = [
       "Get help covering your unexpected emergency medical expenses and more wherever you travel with a travel insurance plan from us.",
   },
   {
-    icon: <HealthIcon />,
-    name: "Health Insurance",
-    imageUrl: healthInsurance,
+    icon: <CarIcon />,
+    imageUrl: carInsurance,
+    name: "Car Insurance",
     description:
-      "Help protect yourself from regular health and dental costs and the expenses associated with disability, critical illness and long term care.",
+      "By investing in a comprehensive car insurance policy, you can protect yourself from financial loss and ensure that you’re able to get back on the road as quickly as possible after an accident or other covered event.",
   },
 ];
 export const Services = () => {
