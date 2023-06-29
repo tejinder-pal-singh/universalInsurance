@@ -56,15 +56,15 @@ export const About = () => {
         <div className="blob  absolute left-1/2 top-1/2 [translate:-50%-60%] opacity-30 h-3/4 aspect-square rounded-full bg-gradient-to-r from-yellow to-primary animate-rotate "></div>
 
         <Navbar invisible />
-        <div className="z-30 px-10 py-20  lg:h-[750px] lg:px-32  hero w-full  lg:py-5 flex-col-reverse justify-evenly flex lg:flex-row lg:justify-between ">
-          <div className="z-30 heading w-2/3 py-10 text-2xl md:text-4xl lg:text-7xl">
+        <div className="z-20 px-10 py-20  lg:h-[750px] lg:px-32  hero w-full  lg:py-5 flex-col-reverse justify-evenly flex lg:flex-row lg:justify-between ">
+          <div className="z-20 heading w-2/3 py-10 text-2xl md:text-4xl lg:text-7xl">
             We are an insurance and investment firm dedicated to creating
             greater possibilities for our clients.
           </div>
 
           <img
             src={company}
-            className="z-30 object-cover flex-grow  h-full w-full lg:w-1/3 lg:h-3/4 rounded-r-[6.5rem] rounded-bl-[6.5rem]"
+            className="z-10 object-cover flex-grow  h-full w-full lg:w-1/3 lg:h-3/4 rounded-r-[6.5rem] rounded-bl-[6.5rem]"
             alt=""
           />
         </div>
