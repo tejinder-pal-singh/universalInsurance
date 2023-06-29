@@ -1,5 +1,5 @@
 import { AnimatePresence, Variants, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { ReactComponent as MenuIcon } from "../assets/menu-icon.svg";
@@ -103,7 +103,22 @@ const NavbarItems = ({
 };
 const Navbar = ({ invisible }: { invisible?: boolean }) => {
   const [isToggled, setToggle] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
   const navContainer = {
     visible: {
       //x: 0,
@@ -131,7 +146,9 @@ const Navbar = ({ invisible }: { invisible?: boolean }) => {
         animate={"reveal"}
         className={`navbar ${
           invisible ? "invisible static" : "fixed"
-        }   top-0  z-30 text-lg h-30 py-10 hidden  items-center  px-32 lg:flex w-full justify-between`}
+        }   top-0  z-30 text-lg  py-4 hidden ${
+          isScrolled ? "backdrop-blur-md" : "backdrop-blur-none"
+        } items-center  px-32 lg:flex w-full justify-between`}
       >
         <motion.div variants={appearAnimate} className="logo">
           <Link to={"/"}> logo</Link>
@@ -180,7 +197,9 @@ const Navbar = ({ invisible }: { invisible?: boolean }) => {
       <div
         className={` top-0 navbar ${
           invisible ? " invisible static " : "fixed"
-        } justify-between pt-4 pb-20 px-10 top-0 w-full lg:hidden  z-30 text-lg `}
+        } justify-between pt-4 pb-16 px-10 ${
+          isScrolled ? "backdrop-blur-md" : "backdrop-blur-none"
+        } top-0 w-full lg:hidden  z-30 text-lg `}
       >
         <div className="logo absolute z-60  left-0 p-[inherit] ">logo</div>
 
