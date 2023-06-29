@@ -19,7 +19,7 @@ export const SectionTwo = () => {
           </div>
         </div>
         <div className="call p-4 rounded-r-lg w-fit rounded-bl-lg bg-primary text-white">
-          get a qoute
+          View plans
         </div>
       </div>
       <div className="photo h-full  lg:w-2/4 w-full">
