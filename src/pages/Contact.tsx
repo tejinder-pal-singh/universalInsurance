@@ -48,7 +48,7 @@ export const Contact = () => {
               <p className="mt-2 text-sm ">
                 Our friendly team is here to help.
               </p>
-              <p className="mt-2 text-sm ">hello@merakiui.com</p>
+              <p className="mt-2 text-sm ">hello@company.com</p>
             </div>
 
             <div>
