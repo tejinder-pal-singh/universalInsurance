@@ -53,7 +53,7 @@ export const Services = () => {
         <div className=" section  py-10  lg:py-40 min-h-min flex lg:flex-row flex-col gap-20 justify-between ">
           <img
             src={single}
-            className=" object-cover flex-grow  h-full w-full  lg:h-full rounded-r-[6.5rem] rounded-bl-[6.5rem]"
+            className=" object-cover flex-grow  h-full w-full  lg:w-1/2 lg:h-1/2 rounded-r-[6.5rem] rounded-bl-[6.5rem]"
             alt=""
           />
 
