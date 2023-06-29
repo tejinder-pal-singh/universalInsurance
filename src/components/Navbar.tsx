@@ -2,6 +2,8 @@ import { AnimatePresence, Variants, motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { ReactComponent as MenuIcon } from "../assets/menu-icon.svg";
+import { ReactComponent as CloseIcon } from "../assets/close.svg";
 const appearParent: Variants = {
   initial: { opacity: 0 },
   reveal: {
@@ -79,16 +81,17 @@ const NavbarItems = ({
       >
         <div className="flex absolute top-0 left-0 pt-7 px-10 w-full justify-between ">
           <div className="logo">logo</div>
-          <div className="btn" onClick={onCloseHandler}>
-            X
+          <div className="btn cursor-pointer " onClick={onCloseHandler}>
+            <CloseIcon />
           </div>
         </div>
         <div className="flex flex-col gap-9 text-3xl font-extralight ">
           {items.map((item) => (
             <motion.li
-              className="nav-item active:text-primary"
+              className="nav-item  active:text-primary"
               variants={navItem}
               key={item.name}
+              onClick={onCloseHandler}
             >
               <Link to={item.link}>{item.name}</Link>
             </motion.li>
@@ -185,7 +188,7 @@ const Navbar = ({ invisible }: { invisible?: boolean }) => {
           className="btn absolute z-60  right-0 p-[inherit]"
           onClick={() => setToggle(!isToggled)}
         >
-          =
+          <MenuIcon />
         </button>
         <AnimatePresence>
           {isToggled && (

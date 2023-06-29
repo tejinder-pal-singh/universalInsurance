@@ -1,6 +1,7 @@
 import single from "../assets/single.jpeg";
 import { insuranceTypes } from "../pages/Services";
-
+import { ReactComponent as ArrowIcon } from "../assets/right-arrow.svg";
+import { Link } from "react-router-dom";
 export const SectionOne = () => {
   return (
     <>
@@ -39,16 +40,22 @@ export const SectionOne = () => {
         <div className="cardcontainer grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3 ">
           {insuranceTypes.map((e) => (
             <div className="p-8 space-y-3 h-[30rem] flex justify-between flex-col bg-white rounded-xl">
-              <span className="inline-block text-secondary ">{e.icon}</span>
+              <div className="flex flex-col gap-5">
+                <span className="inline-block text-secondary ">{e.icon}</span>
 
-              <h1 className="text-xl font-semibold  capitalize ">{e.name}</h1>
+                <h1 className="text-xl font-semibold  capitalize ">{e.name}</h1>
 
-              <p className="text-sm">{e.description}</p>
+                <p className="text-sm">{e.description}</p>
+              </div>
 
-              <a
-                href="#"
-                className="inline-flex p-2 text-secondary capitalize rounded-full "
-              ></a>
+              <Link to={"/services"}>
+                <div className="flex hover:text-primary text-secondary  items-center">
+                  <div className="inline-flex p-2  text-base capitalize rounded-full ">
+                    Know more
+                  </div>
+                  <ArrowIcon className="p-2" />
+                </div>
+              </Link>
             </div>
           ))}
         </div>

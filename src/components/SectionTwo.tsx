@@ -1,4 +1,5 @@
 import single from "../assets/single.jpeg";
+import { Link } from "react-router-dom";
 
 export const SectionTwo = () => {
   return (
@@ -19,7 +20,7 @@ export const SectionTwo = () => {
           </div>
         </div>
         <div className="call p-4 rounded-r-lg w-fit rounded-bl-lg bg-primary text-white">
-          View plans
+          <Link to={"/contact"}> Contact us</Link>
         </div>
       </div>
       <div className="photo h-full  lg:w-2/4 w-full">

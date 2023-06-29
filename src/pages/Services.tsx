@@ -10,32 +10,33 @@ import { ReactComponent as CarIcon } from "../assets/car.svg";
 import { ReactComponent as TravelIcon } from "../assets/travel.svg";
 import { ReactComponent as HealthIcon } from "../assets/health.svg";
 import { ReactComponent as LifeIcon } from "../assets/life.svg";
+import { Link } from "react-router-dom";
 
 export const insuranceTypes = [
   {
     icon: <CarIcon />,
     imageUrl: carInsurance,
-    name: "Car",
+    name: "Car Insurance",
     description:
       "By investing in a comprehensive car insurance policy, you can protect yourself from financial loss and ensure that you’re able to get back on the road as quickly as possible after an accident or other covered event.",
   },
   {
     icon: <LifeIcon />,
-    name: "Life",
+    name: "Life Insurance",
     imageUrl: lifeInsurance,
     description:
       "Whether you want help covering final expenses or building a legacy, you can protect your family or business with term or permanent insurance from us.",
   },
   {
     icon: <TravelIcon />,
-    name: "Travel",
+    name: "Travel Insurance",
     imageUrl: travelInsurance,
     description:
       "Get help covering your unexpected emergency medical expenses and more wherever you travel with a travel insurance plan from us.",
   },
   {
     icon: <HealthIcon />,
-    name: "Health",
+    name: "Health Insurance",
     imageUrl: healthInsurance,
     description:
       "Help protect yourself from regular health and dental costs and the expenses associated with disability, critical illness and long term care.",
@@ -79,7 +80,7 @@ export const Services = () => {
             matters the most.
           </div>
           <div className="cardcontainer grid grid-cols-1 gap-8  ">
-            {insuranceTypes.reverse().map((e, i) => (
+            {insuranceTypes.map((e, i) => (
               <div
                 className={`p-8 space-y-3 min-h-[30rem] flex ${
                   i % 2 === 0
@@ -89,12 +90,12 @@ export const Services = () => {
               >
                 <div className=" flex justify-between flex-col ">
                   <div className="flex flex-col gap-5 py-3">
-                    <span className="w-fit p-1 text-secondary bg-primary rounded-full ">
+                    <span className="w-fit h-full p-3 text-secondary bg-primary rounded-full ">
                       {e.icon}
                     </span>
 
                     <h1 className="text-3xl font-semibold text-primary  capitalize ">
-                      {e.name} Insurance
+                      {e.name}
                     </h1>
 
                     <p className="text-sm">{e.description}</p>
@@ -140,7 +141,7 @@ export const Services = () => {
               </div>
             </div>
             <div className="call p-4 rounded-r-lg w-fit rounded-bl-lg bg-secondary text-white">
-              Contact us
+              <Link to={"/contact"}> Contact us</Link>
             </div>
           </div>
           <div className="photo h-full  lg:w-2/4 w-full">
