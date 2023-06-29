@@ -8,9 +8,9 @@ export const Contact = () => {
       <div className="blob  absolute left-1/2 top-1/2 [translate:-50%-60%] opacity-30 h-2/4 aspect-square rounded-full bg-gradient-to-r from-yellow to-primary animate-rotate "></div>
 
       <Navbar invisible />
-      <div className="relative z-30 container px-6 py-12 mx-auto">
+      <div className="relative z-20 container px-6 py-12 mx-auto">
         <div>
-          <p className="text-3xl lg:text-7xl z-30 font-bold dark:text-secondary">
+          <p className="text-3xl lg:text-7xl z-20 font-bold dark:text-secondary">
             Contact us
           </p>
 
