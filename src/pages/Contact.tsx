@@ -7,22 +7,24 @@ export const Contact = () => {
 
       <div className="blob  absolute left-1/2 top-1/2 [translate:-50%-60%] opacity-30 h-2/4 aspect-square rounded-full bg-gradient-to-r from-yellow to-primary animate-rotate "></div>
 
-      <Navbar invisible />
-      <div className="relative z-20 container px-6 py-12 mx-auto">
+      <div className="navbar-spacer invisible pt-10 lg:py-20">
+        navbar plachoder
+      </div>
+      <div className="relative z-20 container px-6 mx-auto">
         <div>
-          <p className="text-3xl lg:text-7xl z-20 font-bold dark:text-secondary">
+          <p className="text-3xl lg:text-6xl z-20 font-bold dark:text-secondary">
             Contact us
           </p>
 
-          <h1 className="mt-2 text-2xl z-20 ">Chat to our friendly team</h1>
+          <h1 className="mt-2 text-xl z-20 ">Chat to our friendly team</h1>
 
-          <p className="mt-3 z-20 ">
+          <p className="mt-3 text-lg z-20 ">
             We’d love to hear from you. Please fill out this form or shoot us an
             email.
           </p>
         </div>
 
-        <div className="grid z-20 grid-cols-1 gap-12 mt-10 lg:grid-cols-2">
+        <div className="grid text-lg z-20 pb-10 grid-cols-1 gap-12 mt-10 lg:grid-cols-2">
           <div className="grid  grid-cols-1 gap-12 md:grid-cols-2">
             <div>
               <span className="inline-block p-3 text-primary rounded-full bg-white">
@@ -42,13 +44,11 @@ export const Contact = () => {
                 </svg>
               </span>
 
-              <h2 className="mt-4 text-base font-medium text-primary ">
-                Email
-              </h2>
-              <p className="mt-2 text-sm ">
+              <h2 className="mt-4 text-xl font-medium text-primary ">Email</h2>
+              <p className="mt-2 text-lg ">
                 Our friendly team is here to help.
               </p>
-              <p className="mt-2 text-sm ">hello@company.com</p>
+              <p className="mt-2 text-lg ">hello@company.com</p>
             </div>
 
             <div>
@@ -74,13 +74,13 @@ export const Contact = () => {
                 </svg>
               </span>
 
-              <h2 className="mt-4 text-base font-medium text-primary ">
+              <h2 className="mt-4 text-xl font-medium text-primary ">
                 Messenger chat
               </h2>
-              <p className="mt-2 text-sm ">
+              <p className="mt-2 text-lg ">
                 Our friendly team is here to help.
               </p>
-              <p className="mt-2 text-sm ">Start new chat</p>
+              <p className="mt-2 text-lg ">Start new chat</p>
             </div>
 
             <div>
@@ -106,13 +106,11 @@ export const Contact = () => {
                 </svg>
               </span>
 
-              <h2 className="mt-4 text-base font-medium text-primary">
-                Office
-              </h2>
-              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+              <h2 className="mt-4 text-xl font-medium text-primary">Office</h2>
+              <p className="mt-2 text-lg text-gray-500 dark:text-gray-400">
                 Come say hello at our office HQ.
               </p>
-              <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">
+              <p className="mt-2 text-lg text-blue-500 dark:text-blue-400">
                 100 Smith Street Collingwood VIC 3066 AU
               </p>
             </div>
@@ -135,13 +133,11 @@ export const Contact = () => {
                 </svg>
               </span>
 
-              <h2 className="mt-4 text-base font-medium text-primary ">
-                Phone
-              </h2>
-              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+              <h2 className="mt-4 text-xl font-medium text-primary ">Phone</h2>
+              <p className="mt-2 text-lg text-gray-500 dark:text-gray-400">
                 Mon-Fri from 8am to 5pm.
               </p>
-              <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">
+              <p className="mt-2 text-lg text-blue-500 dark:text-blue-400">
                 +1 (555) 000-0000
               </p>
             </div>
@@ -151,7 +147,7 @@ export const Contact = () => {
             <form>
               <div className="-mx-2 md:items-center md:flex">
                 <div className="flex-1 px-2">
-                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                  <label className="block mb-2 text-lg text-gray-600 dark:text-gray-200">
                     First Name
                   </label>
                   <input
@@ -162,7 +158,7 @@ export const Contact = () => {
                 </div>
 
                 <div className="flex-1 px-2 mt-4 md:mt-0">
-                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                  <label className="block mb-2 text-lg text-gray-600 dark:text-gray-200">
                     Last Name
                   </label>
                   <input
@@ -174,7 +170,7 @@ export const Contact = () => {
               </div>
 
               <div className="mt-4">
-                <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                <label className="block mb-2 text-lg text-gray-600 dark:text-gray-200">
                   Email address
                 </label>
                 <input
@@ -185,7 +181,7 @@ export const Contact = () => {
               </div>
 
               <div className="w-full mt-4">
-                <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                <label className="block mb-2 text-lg text-gray-600 dark:text-gray-200">
                   Message
                 </label>
                 <textarea

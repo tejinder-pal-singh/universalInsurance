@@ -51,13 +51,16 @@ const teamMembers = [
 export const About = () => {
   return (
     <>
-      <div className="relative bg-breeze overflow-hidden">
+      <div className="relative text-justify bg-breeze overflow-hidden">
         <div className="blob absolute h-full w-full backdrop-blur-3xl z-10 "></div>
         <div className="blob  absolute left-1/2 top-1/2 [translate:-50%-60%] opacity-30 h-3/4 aspect-square rounded-full bg-gradient-to-r from-yellow to-primary animate-rotate "></div>
 
-        <Navbar invisible />
-        <div className="z-20 px-10 py-20  lg:h-[750px] lg:px-32  hero w-full  lg:py-5 flex-col-reverse justify-evenly flex lg:flex-row lg:justify-between ">
-          <div className="z-20 heading w-2/3 py-10 text-2xl md:text-4xl lg:text-7xl">
+        <div className="navbar-spacer invisible py-10 lg:py-20">
+          navbar plachoder
+        </div>
+
+        <div className="z-20 px-10  pb-10 lg:h-[750px] lg:px-32  hero w-full  lg:py-5 flex-col-reverse gap-5 flex lg:flex-row lg:justify-between ">
+          <div className="z-20 text-justify heading lg:w-2/3 w-full  text-3xl  lg:text-6xl">
             We are an insurance and investment firm dedicated to creating
             greater possibilities for our clients.
           </div>
@@ -70,15 +73,15 @@ export const About = () => {
         </div>
       </div>
       <div>
-        <div className="z-20 lg:px-32 px-10  pt-32  lg:min-h-[750px] hero w-full bg-white flex-col gap-10 flex ">
-          <div className="heading w-2/3  text-7xl font-bold">
+        <div className="z-20 lg:px-32 px-10  py-10  lg:min-h-[750px] hero w-full bg-white flex-col gap-10 flex ">
+          <div className="heading w-2/3 text-3xl lg:text-6xl font-bold">
             About [company name]
           </div>
           <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-4">
             {about.map((e) => (
               <div
                 key={e.title}
-                className="flex flex-col items-center  space-y-3 text-center bg-white rounded-xl dark:bg-gray-800"
+                className="flex flex-col items-center text-2xl space-y-3 text-center bg-white rounded-xl dark:bg-gray-800"
               >
                 <span className="inline-block p-3 text-secondary bg-primary rounded-full ">
                   {e.icon}
@@ -86,7 +89,9 @@ export const About = () => {
 
                 <h1 className="text-xl font-semibold  capitalize">{e.title}</h1>
 
-                <p className="text-gray-500 dark:text-gray-300">{e.desc}</p>
+                <p className="text-gray-500 text-xl dark:text-gray-300">
+                  {e.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -98,7 +103,7 @@ export const About = () => {
               alt=""
             />
           </div>
-          <div className="text-lg">
+          <div className="text-xl">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore
             cum assumenda expedita voluptate, reprehenderit voluptatum, odit
             perspiciatis fugiat eius beatae ducimus ipsam necessitatibus
@@ -107,7 +112,9 @@ export const About = () => {
         </div>
 
         <div className="z-20 lg:px-32 px-10  py-32  lg:h-[750px] hero w-full   flex-col gap-10 flex ">
-          <div className="heading w-2/3 font-bold text-7xl">Our team</div>
+          <div className="heading w-2/3 font-bold text-3xl lg:text-6xl">
+            Our team
+          </div>
           <div className="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {teamMembers.map((e) => (
               <div key={e.name} className="w-full max-w-xs text-center">
@@ -118,8 +125,10 @@ export const About = () => {
                 />
 
                 <div className="mt-2">
-                  <h3 className="text-lg font-medium ">{e.name}</h3>
-                  <span className="mt-1 font-medium ">{e.designation}</span>
+                  <h3 className="text-xl font-medium ">{e.name}</h3>
+                  <span className="mt-1 text-base font-medium ">
+                    {e.designation}
+                  </span>
                 </div>
               </div>
             ))}

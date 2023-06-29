@@ -46,12 +46,14 @@ export const insuranceTypes = [
 export const Services = () => {
   return (
     <>
-      <div className="insurance px-10  lg:px-32  w-full h-full bg-cool">
-        <Navbar invisible />
-        <div className="heading font-bold text-4xl lg:text-6xl">
+      <div className="insurance text-lg text-justify px-10 lg:px-32  w-full h-full bg-cool">
+        <div className="navbar-spacer invisible py-10 lg:py-20">
+          navbar plachoder
+        </div>
+        <div className="heading font-bold text-3xl lg:text-6xl">
           Insurance Sevices
         </div>
-        <div className=" section  py-10  lg:py-40 min-h-min flex lg:flex-row flex-col gap-20 justify-between ">
+        <div className=" section  pt-10  lg:py-40 min-h-min flex lg:flex-row flex-col gap-10 justify-between ">
           <img
             src={single}
             className=" object-cover flex-grow  h-full w-full  lg:w-1/2 lg:h-1/2 rounded-r-[6.5rem] rounded-bl-[6.5rem]"
@@ -59,9 +61,11 @@ export const Services = () => {
           />
 
           <div className="paragraph  flex flex-col gap-10 lg:w-4/5 w-full  ">
-            <div className="title text-3xl lg:text-6xl font-semibold ">
-              Insurance can be complicated. But protecting yourself and your
-              loved ones doesn’t have to be.
+            <div className="title text-3xl  font-semibold lg:text-6xl  ">
+              <div className="text-2xl lg:text-5xl">
+                Insurance can be complicated.
+              </div>
+              But protecting yourself and your loved ones doesn’t have to be.
             </div>
             <div className="paragraph flex flex-col lg:flex-row justify-between gap-5 text-lg">
               <div>
@@ -75,7 +79,7 @@ export const Services = () => {
             </div>
           </div>
         </div>
-        <div className="types text-4xl  py-10 lg:py-28 min-h-min flex flex-col gap-32 justify-between ">
+        <div className="types text-4xl  py-10 lg:py-28 min-h-min flex flex-col gap-10 justify-between ">
           <div className="heading font-semibold lg:text-6xl">
             Check out our products, each designed to help you protect what
             matters the most.
@@ -95,18 +99,18 @@ export const Services = () => {
                       {e.icon}
                     </span>
 
-                    <h1 className="text-3xl font-semibold text-primary  capitalize ">
+                    <h1 className="text-3xl lg:6xl font-semibold text-primary  capitalize ">
                       {e.name}
                     </h1>
 
-                    <p className="text-sm">{e.description}</p>
+                    <p className="text-lg">{e.description}</p>
                   </div>
-                  <div className="call p-4 rounded-r-lg w-fit text-base rounded-bl-lg bg-secondary text-white">
-                    get a qoute
+                  <div className="call p-4 rounded-r-lg w-fit text-lg rounded-bl-lg bg-secondary text-white">
+                    get a quote
                   </div>
                 </div>
 
-                <div className="z-20 lg:px-32  pb-5   w-full h-[24rem] ">
+                <div className="z-20 lg:px-32  pb-5 flex items-end  w-full h-[24rem] ">
                   <img
                     src={e.imageUrl}
                     className={`object-cover flex-grow w-full h-full ${
@@ -122,11 +126,11 @@ export const Services = () => {
           </div>
         </div>
       </div>
-      <div className="investments px-10 pt-20 lg:px-32  w-full h-full bg-breeze">
+      <div className="investments text-lg px-10 py-10 lg:px-32  w-full h-full bg-breeze">
         <div className="heading font-bold text-4xl  lg:text-6xl">
-          Investment oppurtunities
+          Investment opportunities
         </div>
-        <div className=" section  py-10  lg:py-40 min-h-min flex lg:flex-row flex-col gap-20 justify-between ">
+        <div className=" section  pt-10   lg:py-40 min-h-min flex lg:flex-row flex-col gap-10  ">
           <div className="paragraph flex flex-col gap-10 lg:w-4/5 w-full  ">
             <div className="title text-3xl lg:text-6xl font-semibold ">
               Investors today face a unique combination of challenges—but they

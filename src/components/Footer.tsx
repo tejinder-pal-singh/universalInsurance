@@ -1,47 +1,47 @@
 export const Footer = () => {
   return (
     <footer className="bg-stone">
-      <div className="mx-auto max-w-screen-xl px-10 py-16 lg:px-8">
+      <div className="text-justify mx-auto text-lg max-w-screen-xl px-10 py-16 lg:px-8">
         <div className="lg:flex lg:items-start lg:gap-8">
           <div className="text-secondary">logo</div>
 
           <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
-            <div className="col-span-2">
+            <div className="col-span-2 text-3xl">
               <div>
-                <h2 className="text-2xl font-bold text-gray-900">
+                <h2 className="font-bold text-secondary">
                   Get the latest news!
                 </h2>
 
-                <p className="mt-4 text-gray-500">
+                <p className="mt-4 text-lg  text-gray-500">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse
                   non cupiditate quae nam molestias.
                 </p>
               </div>
             </div>
 
-            <div className="col-span-2 lg:col-span-3 lg:flex lg:items-end">
+            <div className="col-span-2 text-lg lg:col-span-3 lg:flex lg:items-end">
               <form className="w-full">
-                <div className="button email w-full text-sm md:text-lg  lg:text-xl  flex items-center h-min bg-white rounded-r-lg ">
+                <div className="button email w-full md:text-lg  lg:text-xl  flex items-center h-min bg-white rounded-r-lg ">
                   <input
                     type="text"
                     placeholder="Enter your email"
                     className="lg:w-9/12 w-8/12 h-full p-4 appearance-none focus:appearance-none active:appearance-none  "
                   />
-                  <button className="flex-grow h-full p-4 rounded-r-lg rounded-bl-lg bg-secondary text-white">
+                  <button className="flex-grow h-full p-4  rounded-lg bg-secondary text-white">
                     Sign up
                   </button>
                 </div>
               </form>
             </div>
 
-            <div className="col-span-2 sm:col-span-1">
-              <p className="font-medium text-gray-900">Services</p>
+            <div className="col-span-2 text-xl sm:col-span-1">
+              <p className="font-medium text-secondary">Services</p>
 
-              <ul className="mt-6 space-y-4 text-sm">
+              <ul className="mt-6 space-y-4 text-lg">
                 <li>
                   <a
                     href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    className="text-primary transition hover:opacity-75"
                   >
                     Insurances
                   </a>
@@ -50,7 +50,7 @@ export const Footer = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    className="text-primary transition hover:opacity-75"
                   >
                     Investments
                   </a>
@@ -59,13 +59,13 @@ export const Footer = () => {
             </div>
 
             <div className="col-span-2 sm:col-span-1">
-              <p className="font-medium text-gray-900">Company</p>
+              <p className="font-medium text-secondary text-xl">Company</p>
 
-              <ul className="mt-6 space-y-4 text-sm">
+              <ul className="mt-6 space-y-4 text-lg">
                 <li>
                   <a
                     href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    className="text-primary transition hover:opacity-75"
                   >
                     About
                   </a>
@@ -74,13 +74,15 @@ export const Footer = () => {
             </div>
 
             <div className="col-span-2 sm:col-span-1">
-              <p className="font-medium text-gray-900">Helpful Links</p>
+              <p className="font-medium text-xl text-secondary">
+                Helpful Links
+              </p>
 
-              <ul className="mt-6 space-y-4 text-sm">
+              <ul className="mt-6 space-y-4 text-lg">
                 <li>
                   <a
                     href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    className="text-primary transition hover:opacity-75"
                   >
                     Contact
                   </a>
@@ -89,7 +91,7 @@ export const Footer = () => {
                 <li>
                   <a
                     href="#"
-                    className="text-gray-700 transition hover:opacity-75"
+                    className="text-primary transition hover:opacity-75"
                   >
                     Messenger Chat
                   </a>
@@ -103,7 +105,7 @@ export const Footer = () => {
                   href="/"
                   rel="noreferrer"
                   target="_blank"
-                  className="text-gray-700 transition hover:opacity-75"
+                  className="text-primary transition hover:opacity-75"
                 >
                   <span className="sr-only">Facebook</span>
 
@@ -127,7 +129,7 @@ export const Footer = () => {
                   href="/"
                   rel="noreferrer"
                   target="_blank"
-                  className="text-gray-700 transition hover:opacity-75"
+                  className="text-primary transition hover:opacity-75"
                 >
                   <span className="sr-only">Instagram</span>
 
@@ -151,7 +153,7 @@ export const Footer = () => {
                   href="/"
                   rel="noreferrer"
                   target="_blank"
-                  className="text-gray-700 transition hover:opacity-75"
+                  className="text-primary transition hover:opacity-75"
                 >
                   <span className="sr-only">Twitter</span>
 

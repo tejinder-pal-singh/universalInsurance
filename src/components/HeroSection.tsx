@@ -1,6 +1,6 @@
 import { Variants, motion } from "framer-motion";
 import family from "../assets/family.webp";
-import Navbar from "./Navbar";
+
 const revealParent: Variants = {
   initial: { opacity: 0 },
   reveal: {
@@ -54,7 +54,9 @@ export const HeroSection = () => {
         animate={"reveal"}
         className=" overflow-clip lg:h-full  relative flex flex-col justify-center lg:justify-between lg:items-baseline  "
       >
-        <Navbar invisible />
+        <div className="navbar-spacer invisible py-10 lg:py-20">
+          navbar plachoder
+        </div>
         <BlobBackground />
 
         <HeroContent />
@@ -80,7 +82,7 @@ function HeroContent() {
         variants={textParent}
         className=" lg:w-1/2 h-full gap-8 lg:gap-14 flex flex-col"
       >
-        <motion.div className="text-xl font-semibold md:text-2xl lg:text-4xl xl:text-6xl 2xl:text-7xl items-center lg:items-start text-white flex flex-col gap-5 lg:gap-14">
+        <motion.div className="text-xl md:text-3xl font-semibold  xl:text-6xl items-center lg:items-start text-white flex flex-col gap-5 lg:gap-14">
           <motion.div variants={textReveal} className="text1">
             The best way
           </motion.div>
@@ -100,14 +102,14 @@ function HeroContent() {
         </motion.div>
         <motion.div
           variants={emailReveal}
-          className="button email w-full text-sm md:text-lg  lg:text-xl  flex items-center h-min bg-white rounded-r-lg "
+          className="button email w-full  text-md md:text-lg  lg:text-md  flex items-center h-max bg-white rounded-r-lg "
         >
           <input
             type="text"
             placeholder="Enter your email"
-            className="lg:w-9/12 w-8/12 h-full p-4 appearance-none focus:appearance-none active:appearance-none  "
+            className="lg:w-9/12 w-8/12 h-full p-2 appearance-none focus:appearance-none active:appearance-none  "
           />
-          <button className="flex-grow h-full p-4 rounded-r-lg rounded-bl-lg bg-secondary text-white">
+          <button className="flex-grow h-full p-2  rounded-lg bg-secondary text-white">
             Get insurance plan
           </button>
         </motion.div>

@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { ReactComponent as MenuIcon } from "../assets/menu-icon.svg";
 import { ReactComponent as CloseIcon } from "../assets/close.svg";
+import { ReactComponent as PhoneIcon } from "../assets/phone.svg";
+
 const appearParent: Variants = {
   initial: { opacity: 0 },
   reveal: {
@@ -72,13 +74,15 @@ const NavbarItems = ({
 
   return (
     <>
-      <motion.ul
-        className="navList fixed grid place-items-center top-0 left-0 h-screen w-full backdrop-grayscale bottom-0 z-50 backdrop-blur"
+      <motion.div
+        className="navList fixed grid place-items-center  top-0 left-0 h-screen w-full  bottom-0 z-50 "
         initial="hidden"
         animate="visible"
         exit="hidden"
         variants={navList}
       >
+        <div className="blob absolute h-full w-full backdrop-blur-3xl -z-10"></div>
+
         <div className="flex absolute top-0 left-0 pt-7 px-10 w-full justify-between ">
           <div className="logo">logo</div>
           <div className="btn cursor-pointer " onClick={onCloseHandler}>
@@ -87,24 +91,51 @@ const NavbarItems = ({
         </div>
         <div className="flex flex-col gap-9 text-3xl font-extralight ">
           {items.map((item) => (
-            <motion.li
+            <motion.div
               className="nav-item  active:text-primary"
               variants={navItem}
               key={item.name}
               onClick={onCloseHandler}
             >
               <Link to={item.link}>{item.name}</Link>
-            </motion.li>
+            </motion.div>
           ))}
         </div>
-      </motion.ul>
+      </motion.div>
     </>
   );
 };
-const Navbar = ({ invisible }: { invisible?: boolean }) => {
+const Navbar = () => {
   const [isToggled, setToggle] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
+  const controlNavbar = () => {
+    if (typeof window !== "undefined") {
+      if (window.scrollY > lastScrollY) {
+        // if scroll down hide the navbar
+        setShow(false);
+      } else {
+        // if scroll up show the navbar
+        setShow(true);
+      }
+
+      // remember current page location to use in the next move
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", controlNavbar);
+
+      // cleanup function
+      return () => {
+        window.removeEventListener("scroll", controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -140,89 +171,96 @@ const Navbar = ({ invisible }: { invisible?: boolean }) => {
 
   return (
     <>
-      <motion.div
-        variants={appearParent}
-        initial={"initial"}
-        animate={"reveal"}
-        className={`navbar ${
-          invisible ? "invisible static" : "fixed"
-        }   top-0  z-30 text-lg  py-4 hidden ${
-          isScrolled ? "backdrop-blur-md" : "backdrop-blur-none"
-        } items-center  px-32 lg:flex w-full justify-between`}
-      >
-        <motion.div variants={appearAnimate} className="logo">
-          <Link to={"/"}> logo</Link>
-        </motion.div>
-        <div className="links font-semibold gap-24 flex items-baseline justify-between">
-          <motion.div variants={appearAnimate} className="Learn">
-            <NavLink
-              to={"/services"}
-              className={({ isActive }) => (isActive ? "text-primary" : "")}
-            >
-              Services
-            </NavLink>
-          </motion.div>
-          <motion.div variants={appearAnimate} className="pricing">
-            <NavLink
-              to={"/about"}
-              className={({ isActive }) => (isActive ? "text-primary" : "")}
-            >
-              About
-            </NavLink>
-          </motion.div>
-          <motion.div variants={appearAnimate} className="help">
-            <NavLink
-              to={"/contact"}
-              className={({ isActive }) => (isActive ? "text-primary" : "")}
-            >
-              Contact
-            </NavLink>
-          </motion.div>
-        </div>
-        <div className="buttons font-semibold flex gap-8">
-          <motion.button
-            variants={appearAnimate}
-            className="number p-4 rounded-r-lg rounded-bl-lg bg-white"
-          >
-            453345342
-          </motion.button>
-          <motion.button
-            variants={appearAnimate}
-            className="call p-4 rounded-r-lg rounded-bl-lg bg-secondary text-white"
-          >
-            Get a quote
-          </motion.button>
-        </div>
-      </motion.div>
-      <div
-        className={` top-0 navbar ${
-          invisible ? " invisible static " : "fixed"
-        } justify-between pt-4 pb-16 px-10 ${
-          isScrolled ? "backdrop-blur-md" : "backdrop-blur-none"
-        } top-0 w-full lg:hidden  z-30 text-lg `}
-      >
-        <div className="logo absolute z-60  left-0 p-[inherit] ">logo</div>
-
-        <button
-          className="btn absolute z-60  right-0 p-[inherit]"
-          onClick={() => setToggle(!isToggled)}
+      {show && (
+        <motion.div
+          variants={appearParent}
+          initial={"initial"}
+          animate={"reveal"}
+          className={`navbar fixed   top-0  z-30 text-lg  py-4 hidden ${
+            isScrolled ? "backdrop-blur-md" : "backdrop-blur-none"
+          } items-center bg-transparent  px-32 lg:flex w-full justify-between`}
         >
-          <MenuIcon />
-        </button>
-        <AnimatePresence>
-          {isToggled && (
+          <motion.div variants={appearAnimate} className="logo">
+            <Link to={"/"}> logo</Link>
+          </motion.div>
+          <div
+            className="links 
+   font-semibold gap-24 isolate flex items-baseline mix-blend-difference justify-between"
+          >
             <motion.div
-              className="navbar"
-              initial="hidden"
-              animate={isToggled ? "visible" : "hidden"}
-              exit="hidden"
-              variants={navContainer}
+              className="mix-blend-difference isolate"
+              variants={appearAnimate}
             >
-              <NavbarItems isToggled={isToggled} setToggle={setToggle} />
+              <NavLink
+                to={"/services"}
+                className={({ isActive }) => (isActive ? "text-primary" : " ")}
+              >
+                Services
+              </NavLink>
             </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+            <motion.div variants={appearAnimate}>
+              <NavLink
+                to={"/about"}
+                className={({ isActive }) => (isActive ? "text-primary" : "")}
+              >
+                About
+              </NavLink>
+            </motion.div>
+            <motion.div variants={appearAnimate}>
+              <NavLink
+                to={"/contact"}
+                className={({ isActive }) => (isActive ? "text-primary" : "")}
+              >
+                Contact
+              </NavLink>
+            </motion.div>
+          </div>
+          <div className="buttons font-semibold flex gap-8">
+            <motion.button
+              variants={appearAnimate}
+              className="number p-4 flex items-center gap-2  rounded-lg bg-white"
+            >
+              <PhoneIcon />
+              <span>+1 453345342</span>
+            </motion.button>
+            <motion.button
+              variants={appearAnimate}
+              className="call p-4  rounded-lg bg-secondary text-white"
+            >
+              Get a quote
+            </motion.button>
+          </div>
+        </motion.div>
+      )}
+      {show && (
+        <div
+          className={` top-0 fixed navbar justify-between pt-4 pb-16 px-10 ${
+            isScrolled ? "backdrop-blur-md" : "backdrop-blur-none"
+          } top-0 w-full lg:hidden  z-30 text-lg `}
+        >
+          <div className="logo absolute z-60  left-0 p-[inherit] ">logo</div>
+
+          <button
+            className="btn absolute z-60  right-0 p-[inherit]"
+            onClick={() => setToggle(!isToggled)}
+          >
+            <MenuIcon />
+          </button>
+          <AnimatePresence>
+            {isToggled && (
+              <motion.div
+                className="navbar"
+                initial="hidden"
+                animate={isToggled ? "visible" : "hidden"}
+                exit="hidden"
+                variants={navContainer}
+              >
+                <NavbarItems isToggled={isToggled} setToggle={setToggle} />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      )}
     </>
   );
 };
