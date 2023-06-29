@@ -19,7 +19,7 @@ export const SectionOne = () => {
           <div className="title text-3xl lg:text-7xl font-semibold ">
             Find Individual and family health insurance
           </div>
-          <div className="paragraph flex justify-between gap-5 text-lg">
+          <div className="paragraph flex flex-col lg:flex-row justify-between gap-5 text-lg">
             <div>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus cum
               deserunt perspiciatis rerum magnam,
