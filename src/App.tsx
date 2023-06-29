@@ -5,23 +5,26 @@ import { NoMatch } from "./pages/NoMatch";
 import { Contact } from "./pages/Contact";
 import { Services } from "./pages/Services";
 import { About } from "./pages/About";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="services" element={<Services />} />
-          <Route path="contact" element={<Contact />} />
+      <ScrollToTop>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="services" element={<Services />} />
+            <Route path="contact" element={<Contact />} />
 
-          {/* Using path="*"" means "match anything", so this route
+            {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
                 routes for. */}
-          <Route path="*" element={<NoMatch />} />
-        </Route>
-      </Routes>
+            <Route path="*" element={<NoMatch />} />
+          </Route>
+        </Routes>
+      </ScrollToTop>
     </>
   );
 }
