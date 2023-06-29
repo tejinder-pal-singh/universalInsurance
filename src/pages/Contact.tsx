@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 
 export const Contact = () => {
   return (
-    <section className="bg-cool relative  overflow-hidden">
+    <section className="bg-neutral relative  overflow-hidden">
       <div className="blob absolute h-full w-full backdrop-blur-3xl z-10"></div>
 
       <div className="blob  absolute left-1/2 top-1/2 [translate:-50%-60%] opacity-30 h-2/4 aspect-square rounded-full bg-gradient-to-r from-yellow to-primary animate-rotate "></div>
