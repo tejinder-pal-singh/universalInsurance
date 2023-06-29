@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import company from "../assets/company.webp";
 import team from "../assets/team.jpeg";
+
 import { ReactComponent as TeamIcon } from "../assets/team.svg";
 import { ReactComponent as SolutionIcon } from "../assets/brain.svg";
 import { ReactComponent as IdeaIcon } from "../assets/idea.svg";
@@ -50,31 +51,34 @@ const teamMembers = [
 export const About = () => {
   return (
     <>
-      <div className=" bg-stone ">
+      <div className="relative bg-breeze overflow-hidden">
+        <div className="blob absolute h-full w-full backdrop-blur-3xl z-10 "></div>
+        <div className="blob  absolute left-1/2 top-1/2 [translate:-50%-60%] opacity-30 h-3/4 aspect-square rounded-full bg-gradient-to-r from-yellow to-primary animate-rotate "></div>
+
         <Navbar invisible />
-        <div className="z-20 px-10 pb-5  lg:h-[750px] lg:px-32  hero w-full  lg:py-5 flex-col-reverse justify-evenly flex lg:flex-row lg:justify-between ">
-          <div className="heading w-2/3 py-10 sm:text-2xl md:text-4xl lg:text-7xl">
+        <div className="z-30 px-10 py-20  lg:h-[750px] lg:px-32  hero w-full  lg:py-5 flex-col-reverse justify-evenly flex lg:flex-row lg:justify-between ">
+          <div className="z-30 heading w-2/3 py-10 text-2xl md:text-4xl lg:text-7xl">
             We are an insurance and investment firm dedicated to creating
             greater possibilities for our clients.
           </div>
 
           <img
             src={company}
-            className="object-cover flex-grow  h-full w-full lg:w-1/3 lg:h-3/4 rounded-r-[6.5rem] rounded-bl-[6.5rem]"
+            className="z-30 object-cover flex-grow  h-full w-full lg:w-1/3 lg:h-3/4 rounded-r-[6.5rem] rounded-bl-[6.5rem]"
             alt=""
           />
         </div>
       </div>
       <div>
-        <div className="z-20 lg:px-32  pb-5  lg:min-h-[750px] hero w-full  lg:py-5 flex-col gap-10 flex ">
+        <div className="z-20 lg:px-32 px-10  pt-32  lg:min-h-[750px] hero w-full bg-white flex-col gap-10 flex ">
           <div className="heading w-2/3  text-7xl font-bold">
             About [company name]
           </div>
-          <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-4">
             {about.map((e) => (
               <div
                 key={e.title}
-                className="flex flex-col items-center p-6 space-y-3 text-center bg-neutral rounded-xl dark:bg-gray-800"
+                className="flex flex-col items-center  space-y-3 text-center bg-white rounded-xl dark:bg-gray-800"
               >
                 <span className="inline-block p-3 text-secondary bg-primary rounded-full ">
                   {e.icon}
@@ -102,7 +106,7 @@ export const About = () => {
           </div>
         </div>
 
-        <div className="z-20 lg:px-32  pb-5  lg:h-[750px] hero w-full  lg:py-5 flex-col gap-10 flex ">
+        <div className="z-20 lg:px-32 px-10  py-32  lg:h-[750px] hero w-full   flex-col gap-10 flex ">
           <div className="heading w-2/3 font-bold text-7xl">Our team</div>
           <div className="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {teamMembers.map((e) => (
