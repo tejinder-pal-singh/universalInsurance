@@ -1,4 +1,3 @@
-import Navbar from "../components/Navbar";
 import single from "../assets/single.jpeg";
 
 import travelInsurance from "../assets/travelinsurance.webp";

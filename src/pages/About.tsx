@@ -1,4 +1,3 @@
-import Navbar from "../components/Navbar";
 import company from "../assets/company.webp";
 import team from "../assets/team.jpeg";
 

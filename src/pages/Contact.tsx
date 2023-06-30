@@ -1,5 +1,3 @@
-import Navbar from "../components/Navbar";
-
 export const Contact = () => {
   return (
     <section className="bg-neutral relative  overflow-hidden">
