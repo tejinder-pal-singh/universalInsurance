@@ -65,21 +65,22 @@
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#dd5e83",endColorstr="#35e34c",GradientType=1);
 }
 .footer-container {
-	background: rgb(247, 223, 230);
+	background: rgb(255, 255, 240);
 	background: -moz-linear-gradient(
 		186deg,
-		rgba(247, 223, 230, 0.9024859943977591) 0%,
+		rgba(255, 255, 240, 0.44030112044817926) 6%,
 		rgba(237, 255, 240, 0.7008053221288515) 77%
 	);
 	background: -webkit-linear-gradient(
 		186deg,
-		rgba(247, 223, 230, 0.9024859943977591) 0%,
+		rgba(255, 255, 240, 0.44030112044817926) 6%,
 		rgba(237, 255, 240, 0.7008053221288515) 77%
 	);
 	background: linear-gradient(
 		186deg,
-		rgba(247, 223, 230, 0.9024859943977591) 0%,
+		rgba(255, 255, 240, 0.44030112044817926) 6%,
 		rgba(237, 255, 240, 0.7008053221288515) 77%
 	);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f7dfe6",endColorstr="#edfff0",GradientType=1);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fffff0",endColorstr="#edfff0",GradientType=1);
+	/* border-top: 1px grey solid; */
 }
