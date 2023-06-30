@@ -84,7 +84,7 @@ function HeroContent() {
       >
         <motion.div className="text-xl md:text-3xl font-semibold  xl:text-6xl items-center lg:items-start text-white flex flex-col gap-5 lg:gap-14">
           <motion.div variants={textReveal} className="text1">
-            The best way
+            The <span className="px-4 py-2 bg-secondary">best way</span>
           </motion.div>
           <motion.div variants={textReveal} className="text1  flex ">
             to get
