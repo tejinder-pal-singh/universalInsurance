@@ -1,79 +1,80 @@
-import { Variants, motion } from 'framer-motion';
-import family from '../assets/family. webp';
-import './styles.css';
-const revealParent: Variants = {
-	initial: { opacity: 0 },
-	reveal: {
-		opacity: 1,
-		transition: {
-			ease: 'easeInOut',
-			duration: 0.1,
+import { Variants, motion } from "framer-motion";
 
-			when: 'beforeChildren',
-		},
-	},
+import "./styles.css";
+import { Button } from "./Button";
+const revealParent: Variants = {
+  initial: { opacity: 0 },
+  reveal: {
+    opacity: 1,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.1,
+
+      when: "beforeChildren",
+    },
+  },
 };
 const heroParent: Variants = {
-	initial: { opacity: 1 },
-	reveal: {
-		opacity: 1,
-		transition: { staggerChildren: 0.1 },
-	},
+  initial: { opacity: 1 },
+  reveal: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 },
+  },
 };
 const textParent: Variants = {
-	initial: { opacity: 1 },
-	reveal: {
-		opacity: 1,
-		transition: { staggerChildren: 0.1 },
-	},
+  initial: { opacity: 1 },
+  reveal: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 },
+  },
 };
 const emailReveal: Variants = {
-	initial: { opacity: 0, y: 10 },
-	reveal: {
-		opacity: 1,
-		y: 0,
-		transition: { ease: 'easeInOut', duration: 0.5 },
-	},
+  initial: { opacity: 0, y: 10 },
+  reveal: {
+    opacity: 1,
+    y: 0,
+    transition: { ease: "easeInOut", duration: 0.5 },
+  },
 };
 const textReveal: Variants = {
-	initial: { opacity: 0, x: -100 },
-	reveal: {
-		opacity: 1,
-		x: 0,
-		transition: { ease: 'easeInOut', duration: 0.5 },
-	},
+  initial: { opacity: 0, x: -100 },
+  reveal: {
+    opacity: 1,
+    x: 0,
+    transition: { ease: "easeInOut", duration: 0.5 },
+  },
 };
 export const HeroSection = () => {
-	return (
-		<>
-			<HeroContent />
-		</>
-	);
+  return (
+    <>
+      <HeroContent />
+    </>
+  );
 };
 
 function BlobBackground() {
-	return (
-		<>
-			<div className='blob  absolute left-1/2 top-1/2 [translate:-50%-60%] opacity-30 h-full aspect-square rounded-full bg-gradient-to-r from-yellow to-primary animate-rotate '></div>
-		</>
-	);
+  return (
+    <>
+      <div className="blob  absolute left-1/2 top-1/2 [translate:-50%-60%] opacity-30 h-full aspect-square rounded-full bg-gradient-to-r from-yellow to-primary animate-rotate "></div>
+    </>
+  );
 }
 function HeroContent() {
-	return (
-		<div className='flex-container'>
-			<div className='hero-banner-headingText-container'>
-				<h1 className='home-hero-heading'>
-					Is your family is <span className='oval'>secured</span> from whatever
-					life has to offer?
-				</h1>
-				<p className='home-hero-desc py-4'>
-					Well, surely we cannot predict the future but we can be ready for it.
-					Here at 'Universal Insurance', we ensure you to stand with you during
-					the time of urgency. For a better future of you and your family
+  return (
+    <div className="flex-container">
+      <div className="px-10 md:max-w-[450px] items-center backdrop-blur-sm py-4 my-auto hero-banner-headingText-container">
+        <h1 className=" home-hero-heading ">
+          Is your family is <span className="oval">secured</span> from whatever
+          life has to offer?
+        </h1>
+        <p className="home-hero-desc py-4">
+          Well, surely we cannot predict the future but we can be ready for it.
+          Here at 'Universal Insurance', we ensure you to stand with you during
+          the time of urgency. For a better future of you and your family
         </p>
-        <button  className='home-hero-btn'>Schedule a call with our agent ></button>
-			</div>
-			{/* <div className='hero-banner-img'></div>  */}
-		</div>
-	);
+        <Button>Schedule a call with our agent</Button>
+      </div>
+      {/* <div className='hero-banner-img'></div>  */}
+    </div>
+  );
 }
