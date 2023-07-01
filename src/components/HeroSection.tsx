@@ -8,7 +8,7 @@ const revealParent: Variants = {
     opacity: 1,
     transition: {
       ease: "easeInOut",
-      duration: 0.1,
+      duration: 1,
 
       when: "beforeChildren",
     },
@@ -52,31 +52,42 @@ export const HeroSection = () => {
   );
 };
 
-function BlobBackground() {
+function HeroContent() {
+  return (
+    <motion.div
+      variants={revealParent}
+      initial="initial"
+      animate="reveal"
+      className="flex-container"
+    >
+      <motion.div
+        variants={textParent}
+        className="px-10 md:max-w-[450px] items-center backdrop-blur-sm py-4 my-auto hero-banner-headingText-container"
+      >
+        <motion.h1 variants={textReveal} className=" home-hero-heading ">
+          Is your family is <span className="oval">secured</span> from whatever
+          life has to offer?
+        </motion.h1>
+        <motion.p variants={textReveal} className="home-hero-desc py-4">
+          Well, surely we cannot predict the future but we can be ready for it.
+          Here at 'Universal Insurance', we ensure you to stand with you during
+          the time of urgency. For a better future of you and your family
+        </motion.p>
+        <motion.div variants={emailReveal}>
+          <Button className="text-white bg-secondary">
+            Schedule a call with our agent
+          </Button>
+        </motion.div>
+      </motion.div>
+      {/* <div className='hero-banner-img'></div>  */}
+    </motion.div>
+  );
+}
+
+/* function BlobBackground() {
   return (
     <>
       <div className="blob  absolute left-1/2 top-1/2 [translate:-50%-60%] opacity-30 h-full aspect-square rounded-full bg-gradient-to-r from-yellow to-primary animate-rotate "></div>
     </>
   );
-}
-function HeroContent() {
-  return (
-    <div className="flex-container">
-      <div className="px-10 md:max-w-[450px] items-center backdrop-blur-sm py-4 my-auto hero-banner-headingText-container">
-        <h1 className=" home-hero-heading ">
-          Is your family is <span className="oval">secured</span> from whatever
-          life has to offer?
-        </h1>
-        <p className="home-hero-desc py-4">
-          Well, surely we cannot predict the future but we can be ready for it.
-          Here at 'Universal Insurance', we ensure you to stand with you during
-          the time of urgency. For a better future of you and your family
-        </p>
-        <Button className="text-white bg-secondary">
-          Schedule a call with our agent
-        </Button>
-      </div>
-      {/* <div className='hero-banner-img'></div>  */}
-    </div>
-  );
-}
+} */

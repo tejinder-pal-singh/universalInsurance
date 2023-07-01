@@ -5,12 +5,63 @@ import { Link } from "react-router-dom";
 
 import "./styles.css";
 import { Button } from "./Button";
+import { Variants, motion } from "framer-motion";
+const revealParent: Variants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.5,
 
+      when: "beforeChildren",
+    },
+  },
+};
+const revealChildLeft: Variants = {
+  initial: { x: -100, opacity: 0 },
+  animate: {
+    x: 0,
+
+    opacity: 1,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.5,
+    },
+  },
+};
+const buttonReveal: Variants = {
+  initial: { opacity: 0, y: 10 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { ease: "easeInOut", duration: 0.5 },
+  },
+};
+const revealChildRight: Variants = {
+  initial: { x: 100, opacity: 0 },
+  animate: {
+    x: 0,
+
+    opacity: 1,
+    transition: {
+      ease: "easeInOut",
+      duration: 1,
+    },
+  },
+};
 export const SectionOne = () => {
   return (
     <>
-      <div className=" section px-10 py-10 lg:px-32 lg:py-20 min-h-min flex lg:flex-row flex-col gap-10 justify-between bg-neutral">
-        <div className="photo h-full  lg:w-2/4 w-full">
+      <motion.div
+        initial="initial"
+        whileInView="animate"
+        className=" section px-10 py-10 lg:px-32 lg:py-20 min-h-min flex lg:flex-row flex-col gap-10 justify-between bg-neutral"
+      >
+        <motion.div
+          variants={revealChildLeft}
+          className="photo h-full  lg:w-2/4 w-full"
+        >
           <div className="  ">
             <img
               src={interaction}
@@ -18,8 +69,11 @@ export const SectionOne = () => {
               alt=""
             />
           </div>
-        </div>
-        <div className="paragraph text-lg text-justify flex flex-col gap-10 lg:w-4/5 w-full  ">
+        </motion.div>
+        <motion.div
+          variants={revealChildRight}
+          className="paragraph text-lg text-justify flex flex-col gap-10 lg:w-4/5 w-full  "
+        >
           <span className="title font-semibold text-6xl">
             A one stop solution to secure the future of entire family
           </span>
@@ -34,8 +88,8 @@ export const SectionOne = () => {
             </span>
           </span>
           <Button className=" bg-primary text-white w-fit">Get a qoute</Button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       <div className="text-justify lg:px-32 text-3xl px-10 overflow-hidden py-20 lg:py-12min-h-min flex flex-col gap-10 justify-between gradient">
         <div className="heading lg:text-4xl">Insurance types</div>
         <div className=" grid grid-cols-1 gap-8  xl:gap-12 md:grid-cols-2 xl:grid-cols-3 ">
