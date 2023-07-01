@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 
 export const insuranceTypes = [
   {
+    id: "Health",
     icon: <HealthIcon />,
     name: "Health Insurance",
     imageUrl: healthInsurance,
@@ -79,6 +80,7 @@ export const Services = () => {
           <div className="cardcontainer grid grid-cols-1 gap-8  ">
             {insuranceTypes.map((e, i) => (
               <div
+                id={e.id}
                 className={`p-8 space-y-3 min-h-[30rem] flex ${
                   i % 2 === 0
                     ? "flex-col-reverse lg:flex-row "

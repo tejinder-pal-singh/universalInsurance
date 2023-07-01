@@ -62,7 +62,7 @@ function HeroContent() {
     >
       <motion.div
         variants={textParent}
-        className="px-10 md:max-w-[450px] items-center backdrop-blur-sm py-4 my-auto hero-banner-headingText-container"
+        className="px-10 lg:pl-32 lg md:max-w-[560px] items-center backdrop-blur-sm py-4 my-auto hero-banner-headingText-container"
       >
         <motion.h1 variants={textReveal} className=" home-hero-heading ">
           Is your family is <span className="oval">secured</span> from whatever

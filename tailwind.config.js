@@ -7,6 +7,7 @@ export default {
       "6xl": "46px",
       xl: "20px",
       base: "17px",
+      "2xl": "32px",
       "3xl": "46px",
     },
     extend: {
