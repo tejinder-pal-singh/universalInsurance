@@ -2,11 +2,13 @@ import { AnimatePresence, Variants, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { ReactComponent as MenuIcon } from "../assets/menu-icon.svg";
-import { ReactComponent as CloseIcon } from "../assets/close.svg";
+
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import logo from "../assets/logo.png";
-import { ReactComponent as PhoneIcon } from "../assets/phone.svg";
+import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import { Button } from "./Button";
+import { companyDetails } from "../pages/Contact";
 
 const appearParent: Variants = {
   initial: { opacity: 0 },
@@ -77,20 +79,12 @@ const NavbarItems = ({
   return (
     <>
       <motion.div
-        className="navList fixed grid place-items-center  top-0 left-0 h-screen w-full  bottom-0 z-50 "
+        className="pt-32 flex justify-center h-full items-center overflow-hidden  z-50 "
         initial="hidden"
         animate="visible"
         exit="hidden"
         variants={navList}
       >
-        <div className="blob absolute h-full w-full backdrop-blur-3xl -z-10"></div>
-
-        <div className="flex absolute top-0 left-0 pt-7 px-10 w-full justify-between ">
-          <div className="logo">logo</div>
-          <div className="btn cursor-pointer " onClick={onCloseHandler}>
-            <CloseIcon />
-          </div>
-        </div>
         <div className="flex flex-col gap-9 text-3xl font-extralight ">
           {items.map((item) => (
             <motion.div
@@ -129,6 +123,13 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    if (isToggled) {
+      setIsScrolled(true);
+      document.body.style.overflow = "hidden";
+    } else document.body.style.overflow = "auto";
+  }, [isToggled]);
+
+  useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", controlNavbar);
 
@@ -138,6 +139,7 @@ const Navbar = () => {
       };
     }
   }, [lastScrollY]);
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -148,7 +150,7 @@ const Navbar = () => {
   const handleScroll = () => {
     if (window.scrollY > 0) {
       setIsScrolled(true);
-    } else {
+    } else if (!isToggled) {
       setIsScrolled(false);
     }
   };
@@ -181,7 +183,9 @@ const Navbar = () => {
           animate={"reveal"}
           className={`navbar fixed   top-0  z-30 text-lg  py-4 hidden ${
             isScrolled ? "backdrop-blur-md" : "backdrop-blur-none"
-          } items-center bg-transparent  px-32 lg:flex w-full justify-between`}
+          } items-center bg-transparent ${
+            isToggled && "overflow-hidden"
+          } px-32 lg:flex w-full justify-between`}
         >
           <motion.div variants={appearAnimate} className="logo">
             <Link to={"/"}>
@@ -237,12 +241,12 @@ const Navbar = () => {
             <motion.button
               variants={appearAnimate}
               onClick={() => {
-                window.open("tel:+1800229933");
+                window.open(`tel:${companyDetails.telephone}`);
               }}
             >
               <Button className="bg-white flex items-center gap-2">
-                <PhoneIcon />
-                <span>+1 453345342</span>
+                <PhoneOutlinedIcon />
+                <span>{companyDetails.telephone}</span>
               </Button>
             </motion.button>
             <motion.div variants={appearAnimate}>
@@ -253,13 +257,13 @@ const Navbar = () => {
       )}
       {show && (
         <div
-          className={` top-0 fixed navbar justify-between pt-4 pb-16 px-10 ${
-            isScrolled ? "backdrop-blur-md" : "backdrop-blur-none"
-          } top-0 w-full lg:hidden  z-30 text-lg `}
+          className={`top-0 fixed navbar ${
+            isScrolled ? "backdrop-blur-sm" : "backdrop-blur-none"
+          }  pt-4 pb-16 px-10 
+          }  lg:hidden ${isToggled ? "bottom-0" : ""}  w-full z-30 text-lg `}
         >
-          <div className="logo absolute z-60  left-0 px-[inherit] ">
+          <div className={`logo absolute z-60  left-0 px-[inherit] `}>
             <Link to={"/"}>
-              {" "}
               <img
                 src={logo}
                 alt="Universal Insurance"
@@ -270,10 +274,10 @@ const Navbar = () => {
           </div>
 
           <button
-            className="btn absolute z-60  right-0 px-[inherit]"
+            className={`btn absolute z-60  right-0 px-[inherit]`}
             onClick={() => setToggle(!isToggled)}
           >
-            <MenuIcon className="" />
+            {isToggled ? <CloseIcon /> : <MenuIcon />}
           </button>
           <AnimatePresence>
             {isToggled && (
