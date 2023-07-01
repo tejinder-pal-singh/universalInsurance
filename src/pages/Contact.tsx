@@ -2,6 +2,64 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
+import { Variants, motion } from "framer-motion";
+const revealParent: Variants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.5,
+
+      when: "beforeChildren",
+    },
+  },
+};
+const staggerParent: Variants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.5,
+
+      when: "beforeChildren",
+      staggerChildren: 0.5,
+      delay: 0.5,
+    },
+  },
+};
+const revealChildLeft: Variants = {
+  initial: { x: -100, opacity: 0 },
+  animate: {
+    x: 0,
+
+    opacity: 1,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.5,
+    },
+  },
+};
+const bottomReveal: Variants = {
+  initial: { opacity: 0, y: 10 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { ease: "easeInOut", duration: 0.5 },
+  },
+};
+const revealChild: Variants = {
+  initial: { opacity: 0, y: 100 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.5,
+    },
+  },
+};
 export const Contact = () => {
   return (
     <section className="bg-neutral relative  overflow-hidden">
@@ -13,7 +71,11 @@ export const Contact = () => {
         navbar plachoder
       </div>
       <div className="relative px-10 lg:px-32 z-20  w-full">
-        <div>
+        <motion.div
+          variants={revealParent}
+          initial="initial"
+          whileInView="animate"
+        >
           <p className="text-3xl lg:text-6xl z-20 font-bold dark:text-secondary">
             Contact us
           </p>
@@ -24,10 +86,18 @@ export const Contact = () => {
             We’d love to hear from you. Please fill out this form or shoot us an
             email.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid text-lg z-20 w-full justify-between pb-10 grid-cols-1 gap-12 mt-10 lg:grid-cols-2">
-          <div className="grid  grid-cols-1 gap-12 md:grid-cols-2">
+        <motion.div
+          variants={revealParent}
+          initial="initial"
+          whileInView="animate"
+          className="grid text-lg z-20 w-full justify-between pb-10 grid-cols-1 gap-12 mt-10 lg:grid-cols-2"
+        >
+          <motion.div
+            variants={revealChild}
+            className="grid  grid-cols-1 gap-12 md:grid-cols-2"
+          >
             <div>
               <span className="inline-block p-3 text-primary rounded-full bg-white">
                 <EmailOutlinedIcon />
@@ -81,9 +151,12 @@ export const Contact = () => {
                 +1 (555) 000-0000
               </p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="p-4 py-6 rounded-lg bg-white dark:bg-gray-800 md:p-8">
+          <motion.div
+            variants={revealChild}
+            className="p-4 py-6 rounded-lg bg-white dark:bg-gray-800 md:p-8"
+          >
             <form>
               <div className="-mx-2 md:items-center md:flex">
                 <div className="flex-1 px-2">
@@ -134,8 +207,8 @@ export const Contact = () => {
                 Send message
               </button>
             </form>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
