@@ -99,7 +99,7 @@ export const insuranceTypes = [
 export const Services = () => {
   return (
     <>
-      <div className="insurance text-lg text-justify px-10 lg:px-32  w-full h-full bg-cool">
+      <div className="overflow-hidden selection:text-lg text-justify px-10 lg:px-32  w-full h-full bg-cool">
         <div className="navbar-spacer invisible py-10 lg:py-20">
           navbar plachoder
         </div>
@@ -219,7 +219,7 @@ export const Services = () => {
           </div>
         </div>
       </div>
-      <div className="investments text-lg px-10 py-10 lg:px-32  w-full h-full bg-breeze">
+      <div className="overflow-hidden text-lg px-10 py-10 lg:px-32  w-full h-full bg-breeze">
         <motion.div
           variants={revealParent}
           initial="initial"
