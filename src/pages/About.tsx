@@ -1,11 +1,68 @@
-import company from "../assets/company.webp";
+import company from "../assets/company.jpg";
 import team from "../assets/team.jpeg";
 
 import { ReactComponent as TeamIcon } from "../assets/team.svg";
 import { ReactComponent as SolutionIcon } from "../assets/brain.svg";
 import { ReactComponent as IdeaIcon } from "../assets/idea.svg";
 import { ReactComponent as WorldIcon } from "../assets/world.svg";
+import { Variants, motion } from "framer-motion";
+const revealParent: Variants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.5,
 
+      when: "beforeChildren",
+    },
+  },
+};
+const staggerParent: Variants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.5,
+
+      when: "beforeChildren",
+      staggerChildren: 0.5,
+      delay: 0.5,
+    },
+  },
+};
+const revealChildLeft: Variants = {
+  initial: { x: -100, opacity: 0 },
+  animate: {
+    x: 0,
+
+    opacity: 1,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.5,
+    },
+  },
+};
+const bottomReveal: Variants = {
+  initial: { opacity: 0, y: 10 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: { ease: "easeInOut", duration: 0.5 },
+  },
+};
+const revealPhoto: Variants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.1,
+      delay: 1,
+    },
+  },
+};
 const about = [
   {
     title: "Dedicated team",
@@ -54,31 +111,49 @@ export const About = () => {
         <div className="blob absolute h-full w-full backdrop-blur-3xl z-10 "></div>
         <div className="blob  absolute left-1/2 top-1/2 [translate:-50%-60%] opacity-30 h-3/4 aspect-square rounded-full bg-gradient-to-r from-yellow to-primary animate-rotate "></div>
 
-        <div className="navbar-spacer invisible py-10 lg:py-20">
-          navbar plachoder
-        </div>
+        <div className="navbar-spacer invisible pt-20">navbar plachoder</div>
 
-        <div className="z-20 px-10  pb-10 lg:h-[750px] lg:px-32  hero w-full  lg:py-5 flex-col-reverse gap-5 flex lg:flex-row lg:justify-between ">
-          <div className="z-20 text-justify heading lg:w-2/3 w-full  text-3xl  lg:text-6xl">
+        <motion.div
+          variants={staggerParent}
+          initial="initial"
+          whileInView="animate"
+          className="z-20 px-10  pb-10 lg:h-[750px] lg:px-32  hero w-full items-center lg:py-5 flex-col-reverse gap-20 flex lg:flex-row lg:justify-between "
+        >
+          <motion.div
+            variants={revealParent}
+            className="z-20 text-justify heading lg:w-2/3 w-full  text-3xl  lg:text-6xl"
+          >
             We are an insurance and investment firm dedicated to creating
             greater possibilities for our clients.
-          </div>
+          </motion.div>
 
-          <img
+          <motion.img
+            variants={revealParent}
             src={company}
             className="z-10 object-cover flex-grow  h-full w-full lg:w-1/3 lg:h-3/4 rounded-r-[6.5rem] rounded-bl-[6.5rem]"
             alt=""
           />
-        </div>
+        </motion.div>
       </div>
       <div>
-        <div className="z-20 lg:px-32 px-10  py-10  lg:min-h-[750px] hero w-full bg-white flex-col gap-10 flex ">
-          <div className="heading w-2/3 text-3xl lg:text-6xl font-bold">
-            About Universal Solutions
-          </div>
-          <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-4">
+        <div className="z-20 lg:px-32 px-10  pt-10  lg:min-h-[750px] hero w-full bg-white flex-col gap-10 flex ">
+          <motion.div
+            variants={revealParent}
+            initial="initial"
+            whileInView="animate"
+            className="heading w-2/3 text-3xl lg:text-6xl font-bold"
+          >
+            About Universal Insurance
+          </motion.div>
+          <motion.div
+            variants={staggerParent}
+            initial="initial"
+            whileInView="animate"
+            className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-4"
+          >
             {about.map((e) => (
-              <div
+              <motion.div
+                variants={revealParent}
                 key={e.title}
                 className="flex flex-col items-center text-2xl space-y-3 text-center bg-white rounded-xl dark:bg-gray-800"
               >
@@ -91,32 +166,56 @@ export const About = () => {
                 <p className="text-gray-500 text-xl dark:text-gray-300">
                   {e.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="z-20 lg:px-32  pb-5   w-full h-[24rem] ">
+          <motion.div
+            variants={revealPhoto}
+            initial="initial"
+            whileInView="animate"
+            className="z-20   py-5   w-full h-[24rem] "
+          >
             <img
               src={team}
-              className="object-cover flex-grow w-full h-full rounded-r-[6.5rem] rounded-bl-[6.5rem]"
+              className="object-cover  w-full h-full rounded-r-[6.5rem] rounded-bl-[6.5rem]"
               alt=""
             />
-          </div>
-          <div className="text-xl">
+          </motion.div>
+          <motion.div
+            variants={revealChildLeft}
+            initial="initial"
+            whileInView="animate"
+            className="text-xl"
+          >
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore
             cum assumenda expedita voluptate, reprehenderit voluptatum, odit
             perspiciatis fugiat eius beatae ducimus ipsam necessitatibus
             doloribus ratione distinctio dolores deserunt nemo maxime.
-          </div>
+          </motion.div>
         </div>
 
-        <div className="z-20 lg:px-32 px-10  py-32  lg:h-[750px] hero w-full   flex-col gap-10 flex ">
-          <div className="heading w-2/3 font-bold text-3xl lg:text-6xl">
+        <div className="z-20 lg:px-32 px-10  py-10  hero w-full  flex-col gap-10 flex ">
+          <motion.div
+            variants={revealParent}
+            initial="initial"
+            whileInView="animate"
+            className="heading w-2/3 font-bold text-2xl lg:text-2xl"
+          >
             Our team
-          </div>
-          <div className="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          </motion.div>
+          <motion.div
+            variants={staggerParent}
+            initial="initial"
+            whileInView="animate"
+            className="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+          >
             {teamMembers.map((e) => (
-              <div key={e.name} className="w-full max-w-xs text-center">
+              <motion.div
+                variants={bottomReveal}
+                key={e.name}
+                className="w-full max-w-xs text-center"
+              >
                 <img
                   className="object-cover object-center w-full h-48 mx-auto rounded-lg"
                   src={e.imageUrl}
@@ -129,9 +228,9 @@ export const About = () => {
                     {e.designation}
                   </span>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </>
