@@ -72,7 +72,9 @@ function HeroContent() {
           Here at 'Universal Insurance', we ensure you to stand with you during
           the time of urgency. For a better future of you and your family
         </p>
-        <Button>Schedule a call with our agent</Button>
+        <Button className="text-white bg-secondary">
+          Schedule a call with our agent
+        </Button>
       </div>
       {/* <div className='hero-banner-img'></div>  */}
     </div>

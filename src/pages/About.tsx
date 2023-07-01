@@ -74,7 +74,7 @@ export const About = () => {
       <div>
         <div className="z-20 lg:px-32 px-10  py-10  lg:min-h-[750px] hero w-full bg-white flex-col gap-10 flex ">
           <div className="heading w-2/3 text-3xl lg:text-6xl font-bold">
-            About [company name]
+            About Universal Solutions
           </div>
           <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-16 md:grid-cols-2 xl:grid-cols-4">
             {about.map((e) => (
