@@ -2,6 +2,13 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontSize: {
+      lg: "17px",
+      "6xl": "46px",
+      xl: "20px",
+      base: "17px",
+      "3xl": "46px",
+    },
     extend: {
       keyframes: {
         rotate: {
