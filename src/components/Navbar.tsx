@@ -6,6 +6,7 @@ import { ReactComponent as MenuIcon } from "../assets/menu-icon.svg";
 import { ReactComponent as CloseIcon } from "../assets/close.svg";
 import logo from "../assets/logo.png";
 import { ReactComponent as PhoneIcon } from "../assets/phone.svg";
+import { Button } from "./Button";
 
 const appearParent: Variants = {
   initial: { opacity: 0 },
@@ -232,23 +233,21 @@ const Navbar = () => {
               </NavLink>
             </motion.div>
           </div>
-          <div className="buttons font-semibold flex gap-8">
+          <div className="buttons  flex gap-8">
             <motion.button
               variants={appearAnimate}
               onClick={() => {
                 window.open("tel:+1800229933");
               }}
-              className="number p-3 flex items-center gap-2  rounded-lg bg-white"
             >
-              <PhoneIcon />
-              <span>+1 453345342</span>
+              <Button className="bg-white flex items-center gap-2">
+                <PhoneIcon />
+                <span>+1 453345342</span>
+              </Button>
             </motion.button>
-            <motion.button
-              variants={appearAnimate}
-              className="call p-3 rounded-lg bg-secondary text-white"
-            >
-              Get a quote
-            </motion.button>
+            <motion.div variants={appearAnimate}>
+              <Button className="bg-secondary text-white"> Get a quote</Button>
+            </motion.div>
           </div>
         </motion.div>
       )}
