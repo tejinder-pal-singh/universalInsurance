@@ -13,7 +13,7 @@ export const Button = ({
     text-[20px]
     py-[15px]
     px-[25px]
- 
+ first-letter:capitalize
     rounded-[5px]`}
       onClick={onClick}
     >
