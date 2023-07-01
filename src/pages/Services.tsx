@@ -221,18 +221,31 @@ export const Services = () => {
       </div>
       <div className="investments text-lg px-10 py-10 lg:px-32  w-full h-full bg-breeze">
         <motion.div
-          variants={revealChildLeft}
+          variants={revealParent}
+          initial="initial"
+          whileInView="animate"
           className="heading font-bold text-3xl  lg:text-6xl"
         >
           Investment opportunities
         </motion.div>
-        <div className=" section  pt-10   lg:py-40 min-h-min flex lg:flex-row flex-col gap-10  ">
+        <motion.div
+          variants={staggerParent}
+          initial="initial"
+          whileInView="animate"
+          className=" section  pt-10   lg:py-40 min-h-min flex lg:flex-row flex-col gap-10  "
+        >
           <div className="paragraph flex flex-col gap-10 lg:w-4/5 w-full  ">
-            <div className="title text-3xl lg:text-6xl font-semibold ">
+            <motion.div
+              variants={revealChildRight}
+              className="title text-3xl lg:text-6xl font-semibold "
+            >
               Investors today face a unique combination of challenges—but they
               don’t have to face them alone.
-            </div>
-            <div className="paragraph flex justify-between gap-5 text-lg">
+            </motion.div>
+            <motion.div
+              variants={revealChildRight}
+              className="paragraph flex justify-between gap-5 text-lg"
+            >
               <div>
                 Sound financial advice makes all the difference, that’s why we
                 strive to provide more than just investment results for clients.
@@ -240,10 +253,12 @@ export const Services = () => {
                 helping advisors help their clients build and protect their
                 wealth for generations.
               </div>
-            </div>
-            <div className="call p-4 rounded-r-lg w-fit rounded-bl-lg bg-secondary text-white">
-              <Link to={"/contact"}> Contact us</Link>
-            </div>
+            </motion.div>
+            <motion.div variants={buttonReveal} className=" ">
+              <Link to={"/contact"}>
+                <Button className="bg-secondary text-white"> Contact us</Button>
+              </Link>
+            </motion.div>
           </div>
           <div className="photo h-full  lg:w-2/4 w-full">
             <div className="  ">
@@ -254,7 +269,7 @@ export const Services = () => {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );
