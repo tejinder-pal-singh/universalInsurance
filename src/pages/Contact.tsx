@@ -3,6 +3,16 @@ import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutline
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import { Variants, motion } from "framer-motion";
+import { Button } from "../components/Button";
+
+//Edit company details
+export const companyDetails = {
+  telephone: "+1800229933",
+  email: "hello@company.com",
+  address: "100 Smith Street Collingwood VIC 3066 AU",
+  messenger: "https://www.google.com",
+};
+
 const revealParent: Variants = {
   initial: { opacity: 0 },
   animate: {
@@ -15,40 +25,7 @@ const revealParent: Variants = {
     },
   },
 };
-const staggerParent: Variants = {
-  initial: { opacity: 0 },
-  animate: {
-    opacity: 1,
-    transition: {
-      ease: "easeInOut",
-      duration: 0.5,
 
-      when: "beforeChildren",
-      staggerChildren: 0.5,
-      delay: 0.5,
-    },
-  },
-};
-const revealChildLeft: Variants = {
-  initial: { x: -100, opacity: 0 },
-  animate: {
-    x: 0,
-
-    opacity: 1,
-    transition: {
-      ease: "easeInOut",
-      duration: 0.5,
-    },
-  },
-};
-const bottomReveal: Variants = {
-  initial: { opacity: 0, y: 10 },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: { ease: "easeInOut", duration: 0.5 },
-  },
-};
 const revealChild: Variants = {
   initial: { opacity: 0, y: 100 },
   animate: {
@@ -60,6 +37,7 @@ const revealChild: Variants = {
     },
   },
 };
+
 export const Contact = () => {
   return (
     <section className="bg-neutral relative  overflow-hidden">
@@ -107,7 +85,14 @@ export const Contact = () => {
               <p className="mt-2 text-lg ">
                 Our friendly team is here to help.
               </p>
-              <p className="mt-2 text-lg ">hello@company.com</p>
+              <p
+                className="mt-2 text-lg cursor-pointer hover:text-primary"
+                onClick={() => {
+                  window.open(`mailto:${companyDetails.email}`);
+                }}
+              >
+                {companyDetails.email}
+              </p>
             </div>
 
             <div>
@@ -121,7 +106,13 @@ export const Contact = () => {
               <p className="mt-2 text-lg ">
                 Our friendly team is here to help.
               </p>
-              <p className="mt-2 text-lg ">Start new chat</p>
+              <a
+                className="mt-2 text-lg hover:text-primary  "
+                target="_blank"
+                href={companyDetails.messenger}
+              >
+                Start new chat
+              </a>
             </div>
 
             <div>
@@ -134,7 +125,7 @@ export const Contact = () => {
                 Come say hello at our office HQ.
               </p>
               <p className="mt-2 text-lg text-blue-500 dark:text-blue-400">
-                100 Smith Street Collingwood VIC 3066 AU
+                {companyDetails.address}
               </p>
             </div>
 
@@ -147,8 +138,13 @@ export const Contact = () => {
               <p className="mt-2 text-lg text-gray-500 dark:text-gray-400">
                 Mon-Fri from 8am to 5pm.
               </p>
-              <p className="mt-2 text-lg text-blue-500 dark:text-blue-400">
-                +1 (555) 000-0000
+              <p
+                onClick={() => {
+                  window.open(`tel:${companyDetails.telephone}`);
+                }}
+                className="mt-2 hover:text-primary cursor-pointer text-lg text-blue-500 dark:text-blue-400"
+              >
+                {companyDetails.telephone}
               </p>
             </div>
           </motion.div>
@@ -202,10 +198,9 @@ export const Contact = () => {
                   placeholder="Message"
                 ></textarea>
               </div>
-
-              <button className="w-full px-6 py-3 mt-4 text-xl font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-primary rounded-r-lg rounded-bl-lg  hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+              <Button className="w-full my-5 bg-primary text-white">
                 Send message
-              </button>
+              </Button>
             </form>
           </motion.div>
         </motion.div>
