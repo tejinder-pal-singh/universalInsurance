@@ -143,6 +143,7 @@ export const SectionOne = () => {
         >
           {insuranceTypes.map((e) => (
             <motion.div
+              key={e.name}
               variants={revealCard}
               whileHover={{ scale: 1.1 }}
               style={{ height: "388px" }}

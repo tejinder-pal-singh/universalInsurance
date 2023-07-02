@@ -168,6 +168,7 @@ export const Services = () => {
           <div className="cardcontainer grid grid-cols-1 gap-8  ">
             {insuranceTypes.map((e, i) => (
               <motion.div
+                key={e.name}
                 variants={revealChildRight}
                 initial="initial"
                 whileInView="animate"

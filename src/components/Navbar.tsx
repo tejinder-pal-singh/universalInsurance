@@ -238,7 +238,7 @@ const Navbar = () => {
             </motion.div>
           </div>
           <div className="buttons  flex gap-8">
-            <motion.button
+            <motion.div
               variants={appearAnimate}
               onClick={() => {
                 window.open(`tel:${companyDetails.telephone}`);
@@ -248,7 +248,7 @@ const Navbar = () => {
                 <PhoneOutlinedIcon />
                 <span>{companyDetails.telephone}</span>
               </Button>
-            </motion.button>
+            </motion.div>
             <motion.div variants={appearAnimate}>
               <Button className="bg-secondary text-white"> Get a quote</Button>
             </motion.div>
@@ -258,7 +258,7 @@ const Navbar = () => {
       {show && (
         <div
           className={`top-0 fixed navbar ${
-            isScrolled ? "backdrop-blur-sm" : "backdrop-blur-none"
+            isScrolled ? "backdrop-blur-md" : "backdrop-blur-none"
           }  pt-4 pb-16 px-10 
           }  lg:hidden ${isToggled ? "bottom-0" : ""}  w-full z-30 text-lg `}
         >
