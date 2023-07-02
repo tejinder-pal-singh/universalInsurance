@@ -146,14 +146,16 @@ export const SectionOne = () => {
               variants={revealCard}
               whileHover={{ scale: 1.1 }}
               style={{ height: "388px" }}
-              className="p-8  h-fit justify-between flex flex-col group gap-5 hover:scale-105 transition ease-in-out bg-white rounded-xl"
+              className="p-8  h-fit justify-between flex flex-col group gap-5 bg-white rounded-xl"
             >
               <HashLink to={`/services#${e.name.split(" ")[0]}`}>
-                <span style={{ width: "fit-content" }}>{e.icon}</span>
+                <div className="flex items-baseline gap-2 text-secondary ">
+                  <div>{e.icon}</div>
 
-                <span className="text-xl inline font-semibold capitalize">
-                  {e.name}
-                </span>
+                  <div className="text-xl inline font-semibold capitalize">
+                    {e.name}
+                  </div>
+                </div>
 
                 <p className="text-lg">{e.description}</p>
 
