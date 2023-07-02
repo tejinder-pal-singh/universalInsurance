@@ -73,7 +73,6 @@ const revealChildRight: Variants = {
 };
 export const insuranceTypes = [
   {
-    id: "Health",
     icon: <HealthAndSafetyIcon />,
     name: "Health Insurance",
     imageUrl: healthInsurance,
@@ -172,7 +171,7 @@ export const Services = () => {
                 variants={revealChildRight}
                 initial="initial"
                 whileInView="animate"
-                id={e.id}
+                id={`#${e.name.split(" ")[0]}`}
                 className={`p-8 space-y-3 min-h-[30rem] flex ${
                   i % 2 === 0
                     ? "flex-col-reverse lg:flex-row "
@@ -180,8 +179,8 @@ export const Services = () => {
                 } justify-between bg-white rounded-xl`}
               >
                 <div className=" flex  gap-5  flex-col ">
-                  <div className="flex flex-col gap-5 lg:flex lg:items-center lg:flex-row lg:gap-2">
-                    <div className="w-fit h-fit p-2 text-secondary bg-primary rounded-full ">
+                  <div className="flex flex-col gap-2 lg:flex lg:items-baseline lg:flex-row lg:gap-2">
+                    <div className="w-fit h-fit text-primary rounded-full ">
                       {e.icon}
                     </div>
 

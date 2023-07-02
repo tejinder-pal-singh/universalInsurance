@@ -2,6 +2,7 @@ import { Variants, motion } from "framer-motion";
 import familyCrop from "../assets/familyCrop.jpg";
 import "./styles.css";
 import { Button } from "./Button";
+import { Link } from "react-router-dom";
 const revealParent: Variants = {
   initial: { opacity: 0 },
   reveal: {
@@ -80,9 +81,11 @@ function HeroContent() {
               family
             </motion.p>
             <motion.div variants={emailReveal}>
-              <Button className="text-white bg-secondary">
-                Schedule a call with our agent
-              </Button>
+              <Link to={"/contact"}>
+                <Button className="text-white bg-secondary">
+                  Schedule a call with our agent
+                </Button>
+              </Link>
             </motion.div>
           </motion.div>
           {/* <div className='hero-banner-img'></div>  */}
@@ -110,9 +113,11 @@ function HeroContent() {
               family
             </motion.p>
             <motion.div variants={emailReveal}>
-              <Button className="text-white bg-secondary">
-                Schedule a call with our agent
-              </Button>
+              <Link to={"/contact"}>
+                <Button className="text-white bg-secondary">
+                  Schedule a call with our agent
+                </Button>
+              </Link>
             </motion.div>
           </motion.div>
           {/* <div className='hero-banner-img'></div>  */}
