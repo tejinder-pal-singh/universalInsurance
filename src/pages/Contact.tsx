@@ -45,7 +45,7 @@ export const Contact = () => {
 
       <div className="blob  absolute left-1/2 top-1/2 [translate:-50%-60%] opacity-30 h-2/4 aspect-square rounded-full bg-gradient-to-r from-yellow to-primary animate-rotate "></div>
 
-      <div className="navbar-spacer invisible pt-10 lg:py-20">
+      <div className="navbar-spacer invisible pt-20 lg:py-20">
         navbar plachoder
       </div>
       <div className="relative px-10 lg:px-32 z-20  w-full">
