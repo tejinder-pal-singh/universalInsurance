@@ -183,7 +183,7 @@ export const Footer = () => {
 								<a
 									href='tel:+14379724379'
 									className='text-gray-500 transition hover:opacity-75'>
-									Developed By: <b>Panjab Web Services</b>. Email:{' '}
+									Website Developed By: <b>Panjab Web Services</b>. Email:{' '}
 									<span
 										onClick={(e) => {
 											e.stopPropagation();
