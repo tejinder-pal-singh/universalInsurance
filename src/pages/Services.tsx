@@ -179,12 +179,12 @@ export const Services = () => {
                 } justify-between bg-white rounded-xl`}
               >
                 <div className=" flex  gap-5  flex-col ">
-                  <div className="flex flex-col gap-2 lg:flex lg:items-baseline lg:flex-row lg:gap-2">
+                  <div className="flex flex-col gap-2 items-center lg:flex-row lg:gap-2">
                     <div className="w-fit h-fit text-primary rounded-full ">
                       {e.icon}
                     </div>
 
-                    <h1 className="text-3xl lg:6xl font-semibold text-primary  capitalize ">
+                    <h1 className="text-2xl lg:2xl font-semibold text-primary  capitalize ">
                       {e.name}
                     </h1>
                   </div>
@@ -223,7 +223,7 @@ export const Services = () => {
           variants={revealParent}
           initial="initial"
           whileInView="animate"
-          className="heading font-bold text-3xl  lg:text-6xl"
+          className="heading font-bold text-2xl  lg:text-2xl"
         >
           Investment opportunities
         </motion.div>
