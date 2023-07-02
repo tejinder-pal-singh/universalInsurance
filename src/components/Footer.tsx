@@ -183,16 +183,24 @@ export const Footer = () => {
 								<a
 									href='tel:+14379724379'
 									className='text-gray-500 transition hover:opacity-75'>
-									Website Developed By: <b>Panjab Web Services</b>. Email:{' '}
+									Website Developed By:{' '}
+									<b>
+										<a
+											className='hover:underline'
+											href='https://www.tejinder.online'>
+											Panjab Web Services
+										</a>
+									</b>
+									, Email:{' '}
 									<span
 										onClick={(e) => {
 											e.stopPropagation();
 											window.open('mailto:"md.panjabgroup@gmail.com"');
 										}}
 										className='hover:underline'>
-										md.panjabgroup@gmail.com
+										md.panjabgroup@gmail.com,
 									</span>
-									&nbsp; Phone no: +1 437-972-4379
+									&nbsp;Phone no: +1 437-972-4379
 								</a>
 							</li>
 						</ul>
