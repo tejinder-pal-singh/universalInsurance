@@ -5,7 +5,7 @@ import './styles.css';
 export const Footer = () => {
 	return (
 		<footer className='footer-container'>
-			<div className='text-justify lg:px-32 text-lg px-10 py-16 '>
+			<div className='text-justify lg:px-32 text-lg px-10 pt-16 pb-4'>
 				<div className='lg:flex lg:items-start lg:gap-5 lg:justify-between'>
 					<Link to={'/'}>
 						<img
@@ -106,7 +106,7 @@ export const Footer = () => {
 							</ul>
 						</div>
 
-						<ul className='col-span-2 flex justify-start gap-6 lg:col-span-5 lg:justify-end'>
+						{/* <ul className='col-span-2 flex justify-start gap-6 lg:col-span-5 lg:justify-end'>
 							<li>
 								<a
 									href='/'
@@ -168,11 +168,11 @@ export const Footer = () => {
 									</svg>
 								</a>
 							</li>
-						</ul>
+						</ul> */}
 					</div>
 				</div>
 
-				<div className='mt-8 border-t border-gray-100 pt-8'>
+				<div className='mt-8 pt-8'>
 					<div className='sm:flex sm:justify-between'>
 						<p className='text-xs text-gray-500'>
 							&copy; 2023. Company Name. All rights reserved.
