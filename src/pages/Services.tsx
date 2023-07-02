@@ -15,63 +15,7 @@ import { Button } from '../components/Button';
 import SupportIcon from '@mui/icons-material/Support';
 import { Variants, motion } from 'framer-motion';
 import ServiceInvestment from '../components/ServiceInvestment';
-const revealParent: Variants = {
-	initial: { opacity: 0 },
-	animate: {
-		opacity: 1,
-		transition: {
-			ease: 'easeInOut',
-			duration: 0.5,
 
-			when: 'beforeChildren',
-		},
-	},
-};
-const staggerParent: Variants = {
-	initial: { opacity: 0 },
-	animate: {
-		opacity: 1,
-		transition: {
-			ease: 'easeInOut',
-			duration: 0.5,
-
-			when: 'beforeChildren',
-			staggerChildren: 0.5,
-		},
-	},
-};
-const revealChildLeft: Variants = {
-	initial: { x: -100, opacity: 0 },
-	animate: {
-		x: 0,
-
-		opacity: 1,
-		transition: {
-			ease: 'easeInOut',
-			duration: 0.5,
-		},
-	},
-};
-const buttonReveal: Variants = {
-	initial: { opacity: 0, y: 10 },
-	animate: {
-		opacity: 1,
-		y: 0,
-		transition: { ease: 'easeInOut', duration: 0.5 },
-	},
-};
-const revealChildRight: Variants = {
-	initial: { x: 100, opacity: 0 },
-	animate: {
-		x: 0,
-
-		opacity: 1,
-		transition: {
-			ease: 'easeInOut',
-			duration: 0.1,
-		},
-	},
-};
 export const insuranceTypes = [
 	{
 		icon: <HealthAndSafetyIcon />,
@@ -80,7 +24,7 @@ export const insuranceTypes = [
 		imageUrl: healthInsurance,
 		description: `Health insurance plays a crucial role in safeguarding your well-being and providing financial protection against unforeseen medical expenses. While provincial health insurance plans and typical employer-sponsored health plans offer coverage for basic medical services, there are certain expenses that may not be covered.`,
 		meta: (
-			<ul className='text-lg'>
+			<ul className='text-base' className='text-lg'>
 				Additionally, there are various other challenges that can arise when
 				dealing with health issues, such as accessing specialized care, managing
 				daily needs, and coping with the stress and anxiety that accompanies
@@ -156,7 +100,7 @@ export const insuranceTypes = [
 		id: 'life',
 		imageUrl: lifeInsurance,
 		meta: (
-			<ul>
+			<ul className='text-base'>
 				At <span className='text-primary'>Universal Insurance</span>, we offer
 				comprehensive life insurance plans that offer the following benefits:
 				<li>
@@ -229,7 +173,7 @@ export const insuranceTypes = [
 		id: 'travel',
 		imageUrl: travelInsurance,
 		meta: (
-			<ul>
+			<ul className='text-base'>
 				<li>
 					<strong>Trip Cancellation and Interruption:</strong> Our travel
 					insurance plans provide coverage for trip cancellation or interruption
@@ -382,7 +326,7 @@ export const Services = () => {
 									}`}>
 									<img
 										src={e.imageUrl}
-										className={`object-cover flex-grow w-full h-full ${
+										className={`object-cover flex-grow w-full h-full lg:min-w-full ${
 											i % 2 === 0
 												? 'rounded-l-[6.5rem] rounded-br-[6.5rem]'
 												: 'rounded-r-[6.5rem] rounded-bl-[6.5rem]'

@@ -63,7 +63,7 @@ export const SectionTwo = () => {
 	return (
 		<div
 			id='investments'
-			className=' text-justify section px-10 py-10 lg:px-32 lg:py-20 min-h-min flex lg:flex-row flex-col gap-10  bg-neutral'>
+			className=' text-justify section px-10 py-10 lg:px-32 lg:py-20 min-h-min flex lg:flex-row flex-col gap-10 bg-neutral'>
 			<div className='paragraph flex flex-col gap-10 lg:w-4/5 w-full'>
 				<div className='title text-2xl lg:text-2xl font-semibold'>
 					Find Investment Plans
@@ -102,7 +102,9 @@ export const SectionTwo = () => {
 			<img
 				src={single}
 				className='rounded-b-[6.5rem] rounded-tr-[6.5rem]'
+				style={{ maxHeight: '370px' }}
 				width={500}
+				height={300}
 				alt=''
 			/>
 		</div>

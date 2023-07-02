@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from './Button';
-import single from '../assets/single.jpeg';
+import single from '../assets/family.webp';
 
 const ServiceInvestment = () => {
 	return (
