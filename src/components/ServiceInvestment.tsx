@@ -5,7 +5,7 @@ import single from '../assets/family.webp';
 const ServiceInvestment = () => {
 	return (
 		<div className='overflow-hidden text-lg px-10 py-10 lg:px-32 w-full h-full bg-breeze'>
-			<div className='heading font-bold text-2xl lg:text-2xl'>
+			<div id='investments' className='heading font-bold text-2xl lg:text-2xl'>
 				Investment opportunities
 			</div>
 			<div className=' section  pt-10   lg:py-20 min-h-min flex lg:flex-row flex-col gap-10  '>
