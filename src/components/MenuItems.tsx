@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import Dropdown from "./Dropdown";
-
-import { Link, NavLink } from "react-router-dom";
-import { HashLink, NavHashLink } from "react-router-hash-link";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { NavLink } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link";
 
 const MenuItems = ({ items, depthLevel }: { items: any; depthLevel: any }) => {
   const [dropdown, setDropdown] = useState(false);
@@ -71,7 +71,7 @@ const MenuItems = ({ items, depthLevel }: { items: any; depthLevel: any }) => {
                     0 && window.innerWidth > 960 ? (
                   <span className="ml-1">&raquo;</span>
                 ) : (
-                  <span className="arrow ml-1" />
+                  <ArrowDropDownIcon />
                 )}
               </NavLink>
             )}
