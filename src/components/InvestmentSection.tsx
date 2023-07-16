@@ -99,15 +99,12 @@ export const SectionTwo = () => {
           </Link>
         </div>
       </div>
-
-      <img
-        src={single}
-        className="rounded-b-[6.5rem] rounded-tr-[6.5rem]"
-        style={{ maxHeight: "370px" }}
-        width={500}
-        height={300}
-        alt=""
-      />
+      <div className="photo h-full  lg:w-2/4 w-full">
+        <img
+          src={single}
+          className="object-cover rounded-b-[6.5rem] rounded-tr-[6.5rem]"
+        />
+      </div>
     </div>
   );
 };
