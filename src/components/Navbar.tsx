@@ -245,7 +245,7 @@ const Navbar = () => {
           </div>
           <div
             className={`${loc.pathname === "/" ? " text-white " : ""} links 
-   font-semibold gap-24 isolate flex items-baseline mix-blend-difference justify-between`}
+   font-semibold  isolate flex items-baseline  justify-between`}
           >
             {navbarLinks.map((a) => (
               <div key={a.title}>
