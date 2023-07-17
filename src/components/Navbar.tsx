@@ -16,7 +16,9 @@ interface NavItem {
   url: string;
   submenu?: NavItem[];
 }
+// navbar links data
 const navbarLinks: NavItem[] = [
+  { title: "Home", url: "/" },
   {
     title: "Services",
     url: "/services",
@@ -24,12 +26,92 @@ const navbarLinks: NavItem[] = [
       {
         title: "Insurance Services",
         url: "/services#insurances",
-        submenu: insuranceTypes.map((t) => ({
-          title: t.name,
-          url: `services#${t.id}`,
-        })),
+        submenu: [
+          { title: "Supervisa insurance", url: "/services#supervisa" },
+          {
+            title: "Life Insurance",
+            url: "/services#life",
+            submenu: [
+              { title: "Life Insurance", url: "/services#life" },
+              { title: "Term Life Insurance", url: "/services#term" },
+              { title: "Money-back Insurance", url: "/services#money-back" },
+              {
+                title: "Income Replacement Insurance",
+                url: "/services#income",
+              },
+              { title: "Mortgage Insurance", url: "/services#mortgage" },
+              {
+                title: "Critical Illness Insurance",
+                url: "/services#critical",
+              },
+              { title: "Disability Insurance", url: "/services#disability" },
+              { title: "Non Medical Insurance", url: "/services#non-medical" },
+              {
+                title: "Drug and Dental Insurance",
+                url: "/services#drug-and-dental",
+              },
+              { title: "Free Insurance Plan", url: "/services#free" },
+            ],
+          },
+          {
+            title: "Travel Insurance",
+            url: "/services#travel",
+            submenu: [
+              {
+                title: "Insurance for Visitors to Canada",
+                url: "/services#insurance-for-visitors",
+              },
+              {
+                title: "Travel insurance for Canadians",
+                url: "/services#insurance-for-canadians",
+              },
+              {
+                title: "Insurance for students",
+                url: "/services#insurance-for-students",
+              },
+            ],
+          },
+        ],
       },
-      { title: "Investment", url: "/services#investments" },
+      {
+        title: "Investments",
+        url: "/services#investments",
+        submenu: [
+          { title: "Buy-Sell Agreements", url: "/services#buy-sell" },
+          {
+            title: "Registered Retirement Savings Plan",
+            url: "/services#retirement",
+          },
+          { title: "RRSP and TFSA", url: "/services#rrsp" },
+          { title: "New Immigrant & RRSP", url: "/services#new-immigrant" },
+        ],
+      },
+    ],
+  },
+  { title: "Supervisa insurance", url: "/services#supervisa" },
+  {
+    title: "Life Insurance",
+    url: "/services#life",
+    submenu: [
+      { title: "Life Insurance", url: "/services#life" },
+      { title: "Term Life Insurance", url: "/services#term" },
+      { title: "Money-back Insurance", url: "/services#money-back" },
+      {
+        title: "Income Replacement Insurance",
+        url: "/services#income",
+      },
+      { title: "Mortgage Insurance", url: "/services#mortgage" },
+      {
+        title: "Critical Illness Insurance",
+        url: "/services#critical",
+      },
+      { title: "Disability Insurance", url: "/services#disability" },
+      { title: "Non Medical Insurance", url: "/services#non-medical" },
+      {
+        title: "Drug and Dental Insurance",
+        url: "/services#drug-and-dental",
+      },
+      { title: "Free Insurance Plan", url: "/services#free" },
     ],
   },
   { title: "About", url: "/about" },
@@ -99,7 +181,7 @@ const Navbar = () => {
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
-      if (window.scrollY > lastScrollY) {
+      if (window.scrollY > lastScrollY && !isToggled) {
         // if scroll down hide the navbar
         setShow(false);
       } else {
@@ -190,39 +272,41 @@ const Navbar = () => {
       )}
       {show && (
         <div
-          className={`mobile top-0 fixed navbar ${
-            isScrolled ? "backdrop-blur-md" : "backdrop-blur-none"
+          className={`mobile overflow-y-scroll overscroll-none top-0 fixed navbar ${
+            isScrolled ? "backdrop-blur-lg " : "backdrop-blur-none"
           }  pt-4 pb-16 px-10 
           }  lg:hidden ${isToggled ? "bottom-0" : ""}  w-full z-30 text-lg `}
         >
-          <div className={`logo absolute z-60  left-0 px-[inherit] `}>
-            <Link to={"/"}>
-              <img
-                src={logo}
-                alt="Universal Insurance"
-                width={200}
-                height={100}
-              />
-            </Link>
+          <div className="px-[inherit] relative">
+            <div className={`logo fixed z-60  left-0 px-[inherit] `}>
+              <Link to={"/"}>
+                <img
+                  src={logo}
+                  alt="Universal Insurance"
+                  width={200}
+                  height={100}
+                />
+              </Link>
+            </div>
+
+            <button
+              className={`btn fixed z-60  right-0 px-[inherit]`}
+              onClick={() => {
+                setToggle((prev) => {
+                  if (!prev) {
+                    setIsScrolled(true);
+                    setShow(true);
+                    document.body.style.overflow = "hidden";
+                  }
+                  document.body.style.overflow = "auto";
+
+                  return !prev;
+                });
+              }}
+            >
+              {isToggled ? <CloseIcon /> : <MenuIcon />}
+            </button>
           </div>
-
-          <button
-            className={`btn absolute z-60  right-0 px-[inherit]`}
-            onClick={() => {
-              setToggle((prev) => {
-                if (!prev) {
-                  setIsScrolled(true);
-                  setShow(true);
-                  document.body.style.overflow = "hidden";
-                }
-                document.body.style.overflow = "auto";
-
-                return !prev;
-              });
-            }}
-          >
-            {isToggled ? <CloseIcon /> : <MenuIcon />}
-          </button>
           <AnimatePresence>
             {isToggled && (
               <motion.div
