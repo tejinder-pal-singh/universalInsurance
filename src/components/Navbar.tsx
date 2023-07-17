@@ -32,7 +32,7 @@ const navbarLinks: NavItem[] = [
             title: "Life Insurance",
             url: "/services#life",
             submenu: [
-              { title: "Life Insurance", url: "/services#life" },
+              { title: "Life-Insurance", url: "/services#life" },
               { title: "Term Life Insurance", url: "/services#term" },
               { title: "Money-back Insurance", url: "/services#money-back" },
               {
@@ -88,7 +88,7 @@ const navbarLinks: NavItem[] = [
       },
     ],
   },
-  { title: "Supervisa insurance", url: "/services#supervisa" },
+  { title: "Supervisa Insurance", url: "/services#supervisa" },
   {
     title: "Life Insurance",
     url: "/services#life",
@@ -114,8 +114,9 @@ const navbarLinks: NavItem[] = [
       { title: "Free Insurance Plan", url: "/services#free" },
     ],
   },
-  { title: "About", url: "/about" },
-  { title: "Contacts", url: "/contact" },
+  { title: "About us", url: "/about" },
+  { title: "Contacts us", url: "/contact" },
+  { title: "Social media", url: "/contact#social" },
 ];
 
 //animations
@@ -248,7 +249,7 @@ const Navbar = () => {
    font-semibold  isolate flex items-baseline  justify-between`}
           >
             {navbarLinks.map((a) => (
-              <div key={a.title}>
+              <div className="hover:text-primary" key={a.title}>
                 <NavbarLink link={a} />
               </div>
             ))}
@@ -390,7 +391,7 @@ function NavbarItems({
 //for large screens
 function NavbarLink({ link }: { link: any }) {
   return (
-    <motion.div className="relative backdrop-invert group">
+    <motion.div className="relative group">
       <ul
         className="flex
   align-center
