@@ -275,7 +275,9 @@ const Navbar = () => {
           className={`mobile overflow-y-scroll overscroll-none top-0 fixed navbar ${
             isScrolled ? "backdrop-blur-lg " : "backdrop-blur-none"
           }  pt-4 pb-16 px-10 
-          }  lg:hidden ${isToggled ? "bottom-0" : ""}  w-full z-30 text-lg `}
+          }  lg:hidden ${
+            isToggled ? "bottom-0 bg-white" : ""
+          }  w-full z-30 text-lg `}
         >
           <div className="px-[inherit] relative">
             <div className={`logo fixed z-60  left-0 px-[inherit] `}>

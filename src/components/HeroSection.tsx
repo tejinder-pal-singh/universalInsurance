@@ -21,11 +21,11 @@ function HeroContent() {
         <div className=" overflow-hidden">
           <img src={familyCrop} alt="family" className="contain" />
           <div className="px-10 lg:pl-32  backdrop-blur-sm py-4 my-auto ">
-            <h1 className=" text-3xl break-words">
-              Is your family
+            <h1 className=" text-3xl break-normal">
+              Is your family{" "}
               <span className="oval bg-secondary rounded-full  px-2 pb-2 text-white">
                 secured
-              </span>
+              </span>{" "}
               from whatever life has to offer?
             </h1>
             <p className="text-base pb-5">
@@ -37,7 +37,7 @@ function HeroContent() {
             <div>
               <Link to={"/contact"}>
                 <Button className="text-white bg-secondary">
-                  Schedule a call with our agent
+                  Schedule a call with our agent {">"}
                 </Button>
               </Link>
             </div>
