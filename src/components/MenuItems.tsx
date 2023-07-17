@@ -61,9 +61,9 @@ const MenuItems = ({ items, depthLevel }: { items: any; depthLevel: any }) => {
               items.title
             ) : (
               <NavLink
-                className={({ isActive }) =>
+                className={({ isActive: isactive }) =>
                   `flex items-center ${
-                    isActive ? " text-primary underline " : " "
+                    isactive ? " text-primary underline " : " "
                   }`
                 }
                 to={items.url}
