@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import Dropdown from "./Dropdown";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 
 const MenuItems = ({ items, depthLevel }: { items: any; depthLevel: any }) => {
+  const loc = useLocation();
   const [dropdown, setDropdown] = useState(false);
 
   let ref = useRef<HTMLLIElement>(null);
@@ -41,7 +42,9 @@ const MenuItems = ({ items, depthLevel }: { items: any; depthLevel: any }) => {
       className={`relative ${
         depthLevel > 0
           ? "text-secondary hover:bg-secondary hover:text-white"
-          : ""
+          : loc.pathname === "/"
+          ? "text-white"
+          : "text-grey"
       }`}
       ref={ref}
       onMouseEnter={onMouseEnter}
@@ -63,7 +66,9 @@ const MenuItems = ({ items, depthLevel }: { items: any; depthLevel: any }) => {
               <NavLink
                 className={({ isActive }) =>
                   `flex items-center ${
-                    isActive ? " text-primary underline " : " "
+                    isActive && depthLevel === 0
+                      ? " text-secondary underline "
+                      : " "
                   }`
                 }
                 to={items.url}
@@ -104,11 +109,9 @@ const MenuItems = ({ items, depthLevel }: { items: any; depthLevel: any }) => {
       ) : (
         <NavHashLink
           className={({ isActive }) =>
-            `text-left px-3 py-4 block ${
-              isActive
-                ? "text-primary underline text-left px-3 py-4 block"
-                : " "
-            }`
+            `text-left  px-3 py-4 block ${
+              isActive && depthLevel === 0 ? "text-secondary underline " : " "
+            } `
           }
           to={items.url}
         >

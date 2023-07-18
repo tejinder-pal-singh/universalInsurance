@@ -115,8 +115,11 @@ const navbarLinks: NavItem[] = [
     ],
   },
   { title: "About us", url: "/about" },
-  { title: "Contacts us", url: "/contact" },
-  { title: "Social media", url: "/contact#social" },
+  {
+    title: "Contact us",
+    url: "/contact",
+    submenu: [{ title: "Social media", url: "/contact#social" }],
+  },
 ];
 
 //animations
@@ -225,9 +228,11 @@ const Navbar = () => {
       {show && (
         <div
           style={{ height: "110px" }}
-          className={`navbar desktop fixed top-0 z-50 text-lg py-4 hidden ${
+          className={`navbar desktop fixed top-0 z-50 text-lg py-4  hidden ${
             isScrolled
-              ? "backdrop-blur-md  backdrop-contrast-50"
+              ? loc.pathname === "/"
+                ? "backdrop-contrast-50 backdrop-blur-md  "
+                : " backdrop-blur-md "
               : "backdrop-blur-none"
           } items-center bg-transparent ${
             isToggled && "overflow-hidden"
@@ -249,7 +254,7 @@ const Navbar = () => {
    font-semibold  isolate flex items-baseline  justify-between`}
           >
             {navbarLinks.map((a) => (
-              <div className="hover:text-primary" key={a.title}>
+              <div key={a.title}>
                 <NavbarLink link={a} />
               </div>
             ))}
@@ -354,7 +359,7 @@ function NavbarItems({
         <div className="flex flex-col gap-9 text-3xl font-extralight ">
           {navbarLinks.map((item) => (
             <motion.div
-              className="nav-item  active:text-primary"
+              className="nav-item  active:text-secondary"
               variants={navItem}
               key={item.title}
               onClick={onCloseHandler}
