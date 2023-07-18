@@ -39,12 +39,12 @@ const MenuItems = ({ items, depthLevel }: { items: any; depthLevel: any }) => {
 
   return (
     <li
-      className={`relative ${
+      className={`relative  ${
         depthLevel > 0
           ? "text-secondary hover:bg-secondary hover:text-white"
-          : loc.pathname === "/"
-          ? "text-white"
-          : "text-grey"
+          : ["/"].includes(loc.pathname)
+          ? "text-white hover:text-yellow"
+          : "text-grey hover:text-secondary"
       }`}
       ref={ref}
       onMouseEnter={onMouseEnter}
