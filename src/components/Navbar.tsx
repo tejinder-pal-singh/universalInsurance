@@ -88,7 +88,7 @@ const navbarLinks: NavItem[] = [
       },
     ],
   },
-  { title: "Supervisa Insurance", url: "/services#supervisa" },
+  { title: "Supervisa Insurance", url: "/supervisa" },
   {
     title: "Life Insurance",
     url: "/services#life",
@@ -250,7 +250,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div
-            className={`${loc.pathname === "/" ? " text-white " : ""} links 
+            className={`links 
    font-semibold  isolate flex items-baseline  justify-between`}
           >
             {navbarLinks.map((a) => (
