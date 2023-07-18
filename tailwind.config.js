@@ -34,7 +34,7 @@ export default {
       neutral: "#F0F9FF",
       breeze: "#CFFAFE",
       cool: "#F0FDF4",
-      grey: "#9ca3af",
+      grey: "#64748b",
     },
   },
   plugins: [],
