@@ -406,7 +406,7 @@ export const Supervisa = () => {
             </tbody>
           </table>
         </div>
-        <div className=" mt-5 text-xl text-right">
+        <div className=" mt-5 text-lg text-right">
           * DEPOSIT: Pre-payment of patient charges is required when services to
           be provided by the Hospital to a patient are not insured. The deposit
           requested will be for three (3) days of inpatient stay.
