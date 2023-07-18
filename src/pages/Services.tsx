@@ -3,17 +3,14 @@ import single from "../assets/single.jpeg";
 import travelInsurance from "../assets/travelinsurance.webp";
 import healthInsurance from "../assets/familyProtecting.png";
 import lifeInsurance from "../assets/healthinsurance.jpg";
-import carInsurance from "../assets/carinsurance.webp";
+
 import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
-import { ReactComponent as CarIcon } from "../assets/car.svg";
-import { ReactComponent as TravelIcon } from "../assets/travel.svg";
-import { ReactComponent as HealthIcon } from "../assets/health.svg";
-import { ReactComponent as LifeIcon } from "../assets/life.svg";
+
 import AirplanemodeActiveIcon from "@mui/icons-material/AirplanemodeActive";
-import { Link } from "react-router-dom";
+
 import { Button } from "../components/Button";
 import SupportIcon from "@mui/icons-material/Support";
-import { Variants, motion } from "framer-motion";
+
 import ServiceInvestment from "../components/ServiceInvestment";
 
 export const insuranceTypes = [
