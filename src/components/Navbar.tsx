@@ -7,9 +7,9 @@ import logo from "../assets/logo.png";
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import { Button } from "./Button";
 import { companyDetails } from "../pages/Contact";
-import { insuranceTypes } from "../pages/Services";
 import MenuItems from "./MenuItems";
 import { HashLink } from "react-router-hash-link";
+import { lifeInsuranceTypes, travelInsuranceTypes } from "../data";
 
 interface NavItem {
   title: string;
@@ -27,49 +27,22 @@ const navbarLinks: NavItem[] = [
         title: "Insurance Services",
         url: "/services#insurances",
         submenu: [
-          { title: "Supervisa insurance", url: "/services#supervisa" },
+          { title: "Supervisa insurance", url: "/supervisa" },
           {
             title: "Life Insurance",
-            url: "/services#life",
-            submenu: [
-              { title: "Life-Insurance", url: "/services#life" },
-              { title: "Term Life Insurance", url: "/services#term" },
-              { title: "Money-back Insurance", url: "/services#money-back" },
-              {
-                title: "Income Replacement Insurance",
-                url: "/services#income",
-              },
-              { title: "Mortgage Insurance", url: "/services#mortgage" },
-              {
-                title: "Critical Illness Insurance",
-                url: "/services#critical",
-              },
-              { title: "Disability Insurance", url: "/services#disability" },
-              { title: "Non Medical Insurance", url: "/services#non-medical" },
-              {
-                title: "Drug and Dental Insurance",
-                url: "/services#drug-and-dental",
-              },
-              { title: "Free Insurance Plan", url: "/services#free" },
-            ],
+            url: "/life-insurance",
+            submenu: lifeInsuranceTypes.map((e) => ({
+              title: e.name,
+              url: `/life-insurance#${e.id}`,
+            })),
           },
           {
             title: "Travel Insurance",
             url: "/services#travel",
-            submenu: [
-              {
-                title: "Insurance for Visitors to Canada",
-                url: "/services#insurance-for-visitors",
-              },
-              {
-                title: "Travel insurance for Canadians",
-                url: "/services#insurance-for-canadians",
-              },
-              {
-                title: "Insurance for students",
-                url: "/services#insurance-for-students",
-              },
-            ],
+            submenu: travelInsuranceTypes.map((i) => ({
+              title: i.name,
+              url: `/services#${i.id}`,
+            })),
           },
         ],
       },
@@ -91,28 +64,11 @@ const navbarLinks: NavItem[] = [
   { title: "Supervisa Insurance", url: "/supervisa" },
   {
     title: "Life Insurance",
-    url: "/services#life",
-    submenu: [
-      { title: "Life Insurance", url: "/services#life" },
-      { title: "Term Life Insurance", url: "/services#term" },
-      { title: "Money-back Insurance", url: "/services#money-back" },
-      {
-        title: "Income Replacement Insurance",
-        url: "/services#income",
-      },
-      { title: "Mortgage Insurance", url: "/services#mortgage" },
-      {
-        title: "Critical Illness Insurance",
-        url: "/services#critical",
-      },
-      { title: "Disability Insurance", url: "/services#disability" },
-      { title: "Non Medical Insurance", url: "/services#non-medical" },
-      {
-        title: "Drug and Dental Insurance",
-        url: "/services#drug-and-dental",
-      },
-      { title: "Free Insurance Plan", url: "/services#free" },
-    ],
+    url: "/life-insurance",
+    submenu: lifeInsuranceTypes.map((e) => ({
+      title: e.name,
+      url: `/life-insurance#${e.id}`,
+    })),
   },
   { title: "About us", url: "/about" },
   {
