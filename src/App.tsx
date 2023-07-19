@@ -8,6 +8,7 @@ import { About } from "./pages/About";
 import ScrollToTop from "./components/ScrollToTop";
 import "./components/styles.css";
 import { Supervisa } from "./pages/Supervisa";
+import LifeInsurance from "./pages/LifeInsurance";
 function App() {
   return (
     <>
@@ -19,6 +20,7 @@ function App() {
             <Route path="services" element={<Services />} />
             <Route path="contact" element={<Contact />} />
             <Route path="supervisa" element={<Supervisa />} />
+            <Route path="life-insurance" element={<LifeInsurance />} />
 
             {/* Using path="*"" means "match anything", so this route
                 acts like a catch-all for URLs that we don't have explicit
