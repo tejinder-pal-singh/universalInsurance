@@ -1,5 +1,5 @@
 import interaction from "../assets/interaction.webp";
-import { insuranceTypes } from "../pages/Services";
+import { insuranceTypes } from "../data";
 import { ReactComponent as ArrowIcon } from "../assets/right-arrow.svg";
 import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
