@@ -124,7 +124,7 @@ export const insuranceTypes: InsuranceTypes[] = [
           </span>
           has access to 20+ insurance providers in health domain.\n \t We thrive
           to give you the best value for money, and do not forget our 24* 7
-          support to ensure you get proper guidance whenever and whereever you
+          support to ensure you get proper guidance whenever and wherever you
           need.`,
         </li>
       </ul>
