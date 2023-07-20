@@ -55,8 +55,7 @@ const LifeInsurance = () => {
         </div>
         <div className="types text-xl  py-10 lg:py-12 min-h-min flex flex-col gap-10 justify-between">
           <div className="heading font-semibold text-2xl">
-            Check out our products, each designed to help you protect what
-            matters the most.
+            Life Insurance types
           </div>
           <div className="cardcontainer grid grid-cols-1 gap-8">
             {lifeInsuranceTypes.map((e, i) => (

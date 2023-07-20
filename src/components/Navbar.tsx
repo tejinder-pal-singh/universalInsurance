@@ -9,7 +9,11 @@ import { Button } from "./Button";
 import { companyDetails } from "../pages/Contact";
 import MenuItems from "./MenuItems";
 import { HashLink } from "react-router-hash-link";
-import { lifeInsuranceTypes, travelInsuranceTypes } from "../data";
+import {
+  investmentTypes,
+  lifeInsuranceTypes,
+  travelInsuranceTypes,
+} from "../data";
 
 interface NavItem {
   title: string;
@@ -28,6 +32,7 @@ const navbarLinks: NavItem[] = [
         url: "/services#insurances",
         submenu: [
           { title: "Supervisa insurance", url: "/supervisa" },
+          { title: "Health Insurance", url: "/services#health" },
           {
             title: "Life Insurance",
             url: "/life-insurance",
@@ -49,15 +54,10 @@ const navbarLinks: NavItem[] = [
       {
         title: "Investments",
         url: "/services#investments",
-        submenu: [
-          { title: "Buy-Sell Agreements", url: "/services#buy-sell" },
-          {
-            title: "Registered Retirement Savings Plan",
-            url: "/services#retirement",
-          },
-          { title: "RRSP and TFSA", url: "/services#rrsp" },
-          { title: "New Immigrant & RRSP", url: "/services#new-immigrant" },
-        ],
+        submenu: investmentTypes.map((i) => ({
+          title: i.name,
+          url: `/services#${i.id}`,
+        })),
       },
     ],
   },
