@@ -793,7 +793,7 @@ export const travelInsuranceTypes = [
 export const investmentTypes = [
   {
     name: "RRSP",
-    id: "",
+    id: "rrsp",
     description: "",
     meta: (
       <>
@@ -846,7 +846,7 @@ export const investmentTypes = [
   },
   {
     name: "RESP",
-    id: "",
+    id: "resp",
     description: "",
     meta: (
       <>
@@ -955,7 +955,7 @@ export const investmentTypes = [
   },
   {
     name: "RRSP and TFSA",
-    id: "rrsp",
+    id: "rrsp-and-tfsa",
     description:
       "Registered Retirement Savings Plan (RRSP) and Tax-Free Savings Account (TFSA) are both registered investment accounts in Canada that offer tax benefits. They are both popular savings vehicles for Canadians, but they have different features and benefits.",
     meta: (

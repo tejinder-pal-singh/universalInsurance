@@ -63,7 +63,7 @@ const MenuItems = ({ items, depthLevel }: { items: any; depthLevel: any }) => {
             {window.innerWidth < 960 && depthLevel === 0 ? (
               items.title
             ) : (
-              <NavLink
+              <NavHashLink
                 className={({ isActive }) =>
                   `flex items-center ${
                     isActive && depthLevel === 0
@@ -80,7 +80,7 @@ const MenuItems = ({ items, depthLevel }: { items: any; depthLevel: any }) => {
                 ) : (
                   <ArrowDropDownIcon />
                 )}
-              </NavLink>
+              </NavHashLink>
             )}
           </button>
           <Dropdown
@@ -97,7 +97,7 @@ const MenuItems = ({ items, depthLevel }: { items: any; depthLevel: any }) => {
             aria-expanded={dropdown ? "true" : "false"}
             onClick={() => setDropdown((prev) => !prev)}
           >
-            {items.title}{" "}
+            {items.title}
             {depthLevel > 0 ? <span>&raquo;</span> : <span className="arrow" />}
           </button>
           <Dropdown
