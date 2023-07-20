@@ -210,7 +210,7 @@ export const Supervisa = () => {
           </>
         }
         imgSrc={supervisa}
-        cta="schedule a call with our agent >"
+        cta="Get a qoute"
       />
       <div className="overflow-hidden selection:text-lg text-justify px-10 lg:px-32 pb-10  w-full h-full bg-cool">
         <div
