@@ -2,7 +2,7 @@ import single from "../assets/single.jpeg";
 import { Button } from "../components/Button";
 
 import ServiceInvestment from "../components/ServiceInvestment";
-import { insuranceTypes } from "../data";
+import { insuranceTypes, travelInsuranceTypes } from "../data";
 
 export const Services = () => {
   return (
@@ -104,6 +104,17 @@ export const Services = () => {
 
                   <p className="text-lg">{e.description}</p>
                   {e.meta}
+                  {e.id === "travel" && (
+                    <div>
+                      <div className="text-xl">Travel insurances offered:</div>
+                      {travelInsuranceTypes.map((i) => (
+                        <div id={i.id} key={i.id}>
+                          <div className="text-xl font-bold">{i.name}</div>
+                          <div>{i.description}</div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                   <div className="flex gap-4">
                     <Button className="w-fit bg-secondary text-white">
                       get a quote

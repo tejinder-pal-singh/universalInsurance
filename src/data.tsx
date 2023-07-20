@@ -262,85 +262,58 @@ export const lifeInsuranceTypes = [
     meta: (
       <ul>
         <li>
-          <strong>
-            <em>Financial security for your loved ones.</em>
-          </strong>
-          If you die, your life insurance policy will pay a death benefit to
-          your beneficiaries. This money can help them cover your final expenses
-          and maintain their financial security.
+          <strong>Financial security for your loved ones</strong>: If you die,
+          your life insurance policy will pay a death benefit to your
+          beneficiaries. This money can help them cover your final expenses and
+          maintain their financial security.
         </li>
         <li>
-          <strong>
-            <em>Tax benefits.</em>
-          </strong>
-          In many cases, you can deduct your life insurance premiums from your
-          taxable income. Additionally, the death benefit may be tax-free to
-          your beneficiaries.
+          <strong>Tax benefits</strong>: In many cases, you can deduct your life
+          insurance premiums from your taxable income. Additionally, the death
+          benefit may be tax-free to your beneficiaries.
         </li>
         <li>
-          <strong>
-            <em>Peace of mind.</em>
-          </strong>
-          Knowing that your loved ones will be financially secure if you die can
-          give you peace of mind. This can help you focus on living your life to
-          the fullest.
+          <strong>Peace of mind</strong>: Knowing that your loved ones will be
+          financially secure if you die can give you peace of mind. This can
+          help you focus on living your life to the fullest.
         </li>
         <li>
-          <strong>
-            <em>Investment potential.</em>
-          </strong>
-          Some life insurance policies offer investment features, such as the
-          ability to grow your money tax-deferred. This can be a way to save for
-          retirement or other long-term goals.
+          <strong>Investment potential</strong>: Some life insurance policies
+          offer investment features, such as the ability to grow your money
+          tax-deferred. This can be a way to save for retirement or other
+          long-term goals.
         </li>
         <li>
-          <strong>
-            <em>Flexibility.</em>
-          </strong>
-          There are many different types of life insurance policies available,
-          so you can choose one that fits your needs and budget. You can also
-          choose to add riders to your policy to increase your coverage or add
-          benefits, such as disability or critical illness coverage.
+          <strong>Flexibility</strong>: There are many different types of life
+          insurance policies available, so you can choose one that fits your
+          needs and budget. You can also choose to add riders to your policy to
+          increase your coverage or add benefits, such as disability or critical
+          illness coverage.
         </li>
 
         <li>
-          <strong>
-            <em>Premium payment options.</em>
-          </strong>
-          You can choose to pay your premiums monthly, quarterly, semi-annually,
-          or annually.
+          <strong>Premium payment options</strong>: You can choose to pay your
+          premiums monthly, quarterly, semi-annually, or annually.
         </li>
         <li>
-          <strong>
-            <em>Policy term.</em>
-          </strong>
-          The policy term is the length of time your policy will be in effect.
-          You can choose a term that fits your needs, such as 10 years, 20
-          years, or even a lifetime.
+          <strong>Policy term</strong>: The policy term is the length of time
+          your policy will be in effect. You can choose a term that fits your
+          needs, such as 10 years, 20 years, or even a lifetime.
         </li>
         <li>
-          <strong>
-            <em>Sum assured.</em>
-          </strong>
-          The sum assured is the amount of money that will be paid out to your
-          beneficiaries if you die. You can choose a sum assured that is based
-          on your current financial needs and goals.
+          <strong>Sum assured</strong>: The sum assured is the amount of money
+          that will be paid out to your beneficiaries if you die. You can choose
+          a sum assured that is based on your current financial needs and goals.
         </li>
         <li>
-          <strong>
-            <em>Nominee.</em>
-          </strong>
-          The nominee is the person who will receive the death benefit if you
-          die. You can choose any adult as your nominee, such as your spouse,
-          child, or other family member.
+          <strong>Nominee</strong>: The nominee is the person who will receive
+          the death benefit if you die. You can choose any adult as your
+          nominee, such as your spouse, child, or other family member.
         </li>
         <li>
-          <strong>
-            <em>Claim settlement process.</em>
-          </strong>
-          If you die, your beneficiaries will need to file a claim with the life
-          insurance company. The claim settlement process is usually quick and
-          easy.
+          <strong>Claim settlement process</strong>: If you die, your
+          beneficiaries will need to file a claim with the life insurance
+          company. The claim settlement process is usually quick and easy.
         </li>
       </ul>
     ),
@@ -464,7 +437,7 @@ export const lifeInsuranceTypes = [
       </ul>
     ),
     description:
-      "All across the world, the ownership and responsibility of the bread-earner towards the future of his/her family is extremely crucial. Irrespective of the field you work for, the well-being and financial security of your family will always be at the fore-front. No matter what your current savings look like, it doesn’t take enough time before your funds dry out in the event of an unfortunate incident.",
+      "Income replacement insurance is a type of insurance that provides a regular income if you're unable to work due to illness or injury. It can help you cover your living expenses, such as mortgage payments, bills, and groceries, while you're unable to work.",
   },
   {
     name: "Mortgage Insurance",
@@ -497,7 +470,7 @@ export const lifeInsuranceTypes = [
       </ul>
     ),
     description:
-      "All across the world, the ownership and responsibility of the bread-earner towards the future of his/her family is extremely crucial. Irrespective of the field you work for, the well-being and financial security of your family will always be at the fore-front. No matter what your current savings look like, it doesn’t take enough time before your funds dry out in the event of an unfortunate incident.",
+      "Mortgage insurance is an insurance policy that protects the lender in case the borrower defaults on their mortgage payments. It is typically required when a borrower makes a down payment of less than 20% of the purchase price of the home.",
   },
   {
     name: "Critical Illness Insurance",
@@ -531,7 +504,7 @@ export const lifeInsuranceTypes = [
       </ul>
     ),
     description:
-      "All across the world, the ownership and responsibility of the bread-earner towards the future of his/her family is extremely crucial. Irrespective of the field you work for, the well-being and financial security of your family will always be at the fore-front. No matter what your current savings look like, it doesn’t take enough time before your funds dry out in the event of an unfortunate incident.",
+      "Critical illness insurance (CI) is a type of insurance that provides a lump sum payment if you are diagnosed with a critical illness. Critical illnesses are typically life-threatening or debilitating illnesses, such as cancer, heart attack, stroke, or kidney failure",
   },
   {
     name: "Disability Insurance",
@@ -564,7 +537,7 @@ export const lifeInsuranceTypes = [
       </ul>
     ),
     description:
-      "All across the world, the ownership and responsibility of the bread-earner towards the future of his/her family is extremely crucial. Irrespective of the field you work for, the well-being and financial security of your family will always be at the fore-front. No matter what your current savings look like, it doesn’t take enough time before your funds dry out in the event of an unfortunate incident.",
+      "Disability insurance is a type of insurance that provides income if you are unable to work due to illness or injury. It can help you cover your living expenses, such as mortgage payments, bills, and groceries, while you're unable to work.",
   },
   {
     name: "Non Medical Insurance",
@@ -613,7 +586,7 @@ export const lifeInsuranceTypes = [
       </ul>
     ),
     description:
-      "All across the world, the ownership and responsibility of the bread-earner towards the future of his/her family is extremely crucial. Irrespective of the field you work for, the well-being and financial security of your family will always be at the fore-front. No matter what your current savings look like, it doesn’t take enough time before your funds dry out in the event of an unfortunate incident.",
+      "Non-medical insurance is a type of insurance that covers events other than medical expenses.",
   },
   {
     name: "Drug and Dental",
@@ -655,7 +628,7 @@ export const lifeInsuranceTypes = [
       </ul>
     ),
     description:
-      "All across the world, the ownership and responsibility of the bread-earner towards the future of his/her family is extremely crucial. Irrespective of the field you work for, the well-being and financial security of your family will always be at the fore-front. No matter what your current savings look like, it doesn’t take enough time before your funds dry out in the event of an unfortunate incident.",
+      "Drug and dental insurance are two types of health insurance that can help you cover the cost of prescription drugs and dental care.",
   },
   {
     name: "Free Insurance Plan",
@@ -672,9 +645,8 @@ export const lifeInsuranceTypes = [
         <li>
           <strong>May be available through government programs</strong>: There
           are a number of government programs that offer free or low-cost
-          insurance, such as Medicare and Medicaid. If you qualify for one of
-          these programs, you may be able to get coverage without having to pay
-          anything out of pocket.
+          insurance. If you qualify for one of these programs, you may be able
+          to get coverage without having to pay anything out of pocket.
         </li>
         <li>
           <strong>May be available through non-profit organizations</strong>:
@@ -686,7 +658,7 @@ export const lifeInsuranceTypes = [
       </ul>
     ),
     description:
-      "All across the world, the ownership and responsibility of the bread-earner towards the future of his/her family is extremely crucial. Irrespective of the field you work for, the well-being and financial security of your family will always be at the fore-front. No matter what your current savings look like, it doesn’t take enough time before your funds dry out in the event of an unfortunate incident.",
+      "There are no truly free insurance plans available. However, there are some government-sponsored health insurance plans that are available at a low cost or even free to certain people. These plans typically have lower premiums and copays than private health insurance plans, but they may have more restrictions on coverage.",
   },
 ];
 
@@ -694,13 +666,367 @@ export const travelInsuranceTypes = [
   {
     name: "Insurance for visitors to canada",
     id: "insurance-for-visitors",
+    description:
+      "Travel insurance can be a valuable asset for visitors to Canada, as it can help to cover the cost of medical expenses, trip cancellation, and other unexpected costs.",
+    meta: (
+      <ul>
+        <li>
+          <strong>Medical expenses</strong>: Travel insurance can help to cover
+          the cost of medical expenses if you become ill or injured while in
+          Canada. This can include the cost of hospitalization, doctor visits,
+          and prescription drugs.
+        </li>
+        <li>
+          <strong>Trip cancellation</strong>: Travel insurance can help to cover
+          the cost of your trip if you have to cancel your trip due to illness,
+          injury, or other unforeseen circumstances.
+        </li>
+        <li>
+          <strong>Baggage loss or damage</strong>: Travel insurance can help to
+          cover the cost of lost or damaged baggage.
+        </li>
+        <li>
+          <strong>Trip interruption</strong>: Travel insurance can help to cover
+          the cost of your trip if you have to interrupt your trip due to
+          illness, injury, or other unforeseen circumstances.
+        </li>
+        <li>
+          <strong>Emergency medical transportation</strong>: Travel insurance
+          can help to cover the cost of emergency medical transportation if you
+          need to be airlifted to a hospital.
+        </li>
+      </ul>
+    ),
   },
   {
     name: "Travel Insurance for canadians",
     id: "insurance-for-canadians",
+    description:
+      "Travel insurance is a type of insurance that can help to protect you financially in the event of unexpected events while you are traveling.",
+    meta: (
+      <ul>
+        <li>
+          <strong>Medical expenses</strong>: Travel insurance can help to cover
+          the cost of medical expenses if you become ill or injured while
+          traveling outside of Canada. This can include the cost of
+          hospitalization, doctor visits, and prescription drugs.
+        </li>
+        <li>
+          <strong>Trip cancellation</strong>: Travel insurance can help to cover
+          the cost of your trip if you have to cancel your trip due to illness,
+          injury, or other unforeseen circumstances.
+        </li>
+        <li>
+          <strong>Baggage loss or damage</strong>: Travel insurance can help to
+          cover the cost of lost or damaged baggage.
+        </li>
+        <li>
+          <strong>Trip interruption</strong>: Travel insurance can help to cover
+          the cost of your trip if you have to interrupt your trip due to
+          illness, injury, or other unforeseen circumstances.
+        </li>
+        <li>
+          <strong>Emergency medical transportation</strong>: Travel insurance
+          can help to cover the cost of emergency medical transportation if you
+          need to be airlifted to a hospital.
+        </li>
+        <li>
+          <strong>Trip delay</strong>: Travel insurance can help to cover the
+          cost of your accommodations and expenses if your trip is delayed due
+          to weather, mechanical problems, or other unforeseen circumstances.
+        </li>
+        <li>
+          <strong>Lost passport</strong>: Travel insurance can help to cover the
+          cost of replacing your passport if it is lost or stolen while you are
+          traveling.
+        </li>
+      </ul>
+    ),
   },
   {
     name: "Insurance for students",
     id: "insurance-for-students",
+    description:
+      "Travel insurance for students is a type of insurance that can help to protect students financially in the event of unexpected events while they are traveling.",
+    meta: (
+      <ul>
+        <li>
+          <strong>Medical expenses</strong>: Travel insurance can help to cover
+          the cost of medical expenses if you become ill or injured while
+          traveling outside of your home country. This can include the cost of
+          hospitalization, doctor visits, and prescription drugs.
+        </li>
+        <li>
+          <strong>Trip cancellation</strong>: Travel insurance can help to cover
+          the cost of your trip if you have to cancel your trip due to illness,
+          injury, or other unforeseen circumstances.
+        </li>
+        <li>
+          <strong>Baggage loss or damage</strong>: Travel insurance can help to
+          cover the cost of lost or damaged baggage.
+        </li>
+        <li>
+          <strong>Trip interruption</strong>: Travel insurance can help to cover
+          the cost of your trip if you have to interrupt your trip due to
+          illness, injury, or other unforeseen circumstances.
+        </li>
+        <li>
+          <strong>Emergency medical transportation</strong>: Travel insurance
+          can help to cover the cost of emergency medical transportation if you
+          need to be airlifted to a hospital.
+        </li>
+        <li>
+          <strong>Trip delay</strong>: Travel insurance can help to cover the
+          cost of your accommodations and expenses if your trip is delayed due
+          to weather, mechanical problems, or other unforeseen circumstances.
+        </li>
+        <li>
+          <strong>Lost passport</strong>: Travel insurance can help to cover the
+          cost of replacing your passport if it is lost or stolen while you are
+          traveling.
+        </li>
+      </ul>
+    ),
+  },
+];
+
+export const investmentTypes = [
+  {
+    name: "RRSP",
+    id: "",
+    description: "",
+    meta: (
+      <>
+        <ul>
+          <li>
+            <strong>Tax Deductible Contributions</strong>: Contributions made to
+            an RRSP are tax-deductible, meaning you can reduce your taxable
+            income by the amount contributed, providing potential tax savings.
+          </li>
+          <li>
+            <strong>Tax-Sheltered Growth</strong>: Investments held within an
+            RRSP grow on a tax-sheltered basis. This means you won't be taxed on
+            any investment earnings, such as interest, dividends, or capital
+            gains, as long as they remain within the RRSP.
+          </li>
+          <li>
+            <strong>Flexible Contribution Limits</strong>: You can contribute up
+            to your RRSP contribution limit, which is based on your earned
+            income and set by the government. Unused contribution room can be
+            carried forward to future years.
+          </li>
+          <li>
+            <strong>Long-Term Retirement Savings</strong>: RRSPs are designed to
+            help Canadians save for retirement. They provide a disciplined
+            savings vehicle that can help you accumulate wealth over time,
+            ensuring a comfortable retirement.
+          </li>
+          <li>
+            <strong>Investment Options</strong>: RRSPs offer a wide range of
+            investment options, including stocks, bonds, mutual funds,
+            exchange-traded funds (ETFs), and guaranteed investment certificates
+            (GICs), allowing you to tailor your investments to your risk
+            tolerance and investment goals.
+          </li>
+          <li>
+            <strong>Home Buyers' Plan</strong>: The Home Buyers' Plan (HBP)
+            allows first-time homebuyers to withdraw up to a certain amount from
+            their RRSPs to use as a down payment on a home, providing a
+            tax-advantaged way to fund homeownership.
+          </li>
+          <li>
+            <strong>Lifelong Learning Plan</strong>: The Lifelong Learning Plan
+            (LLP) allows individuals to withdraw funds from their RRSPs to
+            finance eligible education or training programs for themselves or
+            their spouse or common-law partner.
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    name: "RESP",
+    id: "",
+    description: "",
+    meta: (
+      <>
+        <ul>
+          <li>
+            <strong>Tax-Deferred Growth</strong>: Contributions made to an RESP
+            grow on a tax-deferred basis, meaning you won't pay taxes on any
+            investment earnings until the funds are withdrawn for educational
+            purposes.
+          </li>
+          <li>
+            <strong>Canada Education Savings Grant (CESG)</strong>: The CESG is
+            a government grant available to eligible RESP beneficiaries. The
+            government matches a portion of the contributions made to the RESP,
+            providing additional funds to help save for a child's education.
+          </li>
+          <li>
+            <strong>Canada Learning Bond (CLB)</strong>: The CLB is a government
+            grant available to families with modest incomes. It provides an
+            initial amount and subsequent annual contributions to help kickstart
+            education savings for children.
+          </li>
+          <li>
+            <strong>Flexible Contribution Limits</strong>: RESPs have
+            contribution limits, but there is no annual limit. You can
+            contribute up to a lifetime maximum per beneficiary, allowing you to
+            save as much as you want within that limit.
+          </li>
+          <li>
+            <strong>Investment Options</strong>: RESPs offer a variety of
+            investment options, including mutual funds, guaranteed investment
+            certificates (GICs), stocks, bonds, and exchange-traded funds
+            (ETFs). This allows you to choose investments that align with your
+            risk tolerance and investment goals.
+          </li>
+          <li>
+            <strong>Post-Secondary Education Withdrawals</strong>: When the
+            beneficiary enrolls in a qualifying post-secondary program,
+            withdrawals can be made from the RESP to cover educational expenses,
+            such as tuition, books, and living costs.
+          </li>
+          <li>
+            <strong>Flexibility for Beneficiary Changes</strong>: If the
+            intended beneficiary of the RESP does not pursue post-secondary
+            education, you can transfer the funds to another eligible
+            beneficiary within the same family without tax consequences.
+          </li>
+        </ul>
+      </>
+    ),
+  },
+  {
+    name: "Buy-Sell Agreements",
+    id: "buy-sell",
+    description:
+      "A buy-sell agreement is a legal contract that outlines the terms and conditions under which the ownership of a business can be transferred from one party to another. This can be useful in a variety of situations, such as when a business owner wants to retire, when a partner dies, or when a business is sold.",
+    meta: (
+      <ul>
+        <li>
+          <strong>It can help to ensure the continuity of the business.</strong>{" "}
+          If a key owner dies or becomes disabled, the buy-sell agreement will
+          ensure that the business can continue to operate without interruption.
+        </li>
+        <li>
+          <strong>
+            It can help to protect the interests of the remaining owners.
+          </strong>{" "}
+          The buy-sell agreement will specify the price that the remaining
+          owners will pay for the shares of the departing owner. This can help
+          to prevent the departing owner from selling their shares to a third
+          party at a lower price.
+        </li>
+        <li>
+          <strong>It can help to avoid disputes among the owners.</strong> The
+          buy-sell agreement will specify the terms and conditions under which
+          the shares can be transferred. This can help to avoid disputes among
+          the owners if a change in ownership occurs.
+        </li>
+      </ul>
+    ),
+  },
+  {
+    name: "Registered Retirement Savings Plan",
+    id: "retirement-savings",
+    description:
+      "A registered retirement savings plan (RRSP) is a tax-deferred retirement savings account in Canada. Contributions to an RRSP are made with pre-tax dollars, which means that you can deduct them from your taxable income. The money in an RRSP grows tax-deferred, which means that you don't pay taxes on the investment earnings until you withdraw the money in retirement.",
+    meta: (
+      <ul>
+        <li>
+          <strong>Individual RRSPs</strong>: These are the most common type of
+          RRSP. They are held in your name and you have full control over the
+          investments.
+        </li>
+        <li>
+          <strong>Group RRSPs</strong>: These are RRSPs that are offered through
+          your employer. Your employer may match your contributions, which can
+          help you save even more for retirement.
+        </li>
+        <li>
+          <strong>Spousal RRSPs</strong>: These are RRSPs that are set up by one
+          spouse for the benefit of the other spouse. This can be a good way to
+          save for retirement if one spouse has a higher income than the other.
+        </li>
+      </ul>
+    ),
+  },
+  {
+    name: "RRSP and TFSA",
+    id: "rrsp",
+    description:
+      "Registered Retirement Savings Plan (RRSP) and Tax-Free Savings Account (TFSA) are both registered investment accounts in Canada that offer tax benefits. They are both popular savings vehicles for Canadians, but they have different features and benefits.",
+    meta: (
+      <>
+        <div>
+          <div>RRSP</div>
+          <ul>
+            <li>
+              <strong>Contributions are made with pre-tax dollars.</strong> This
+              means that you can deduct your RRSP contributions from your
+              taxable income, which can lower your taxes.
+            </li>
+            <li>
+              <strong>The money in an RRSP grows tax-deferred.</strong> This
+              means that you don't pay taxes on the investment earnings until
+              you withdraw the money in retirement.
+            </li>
+          </ul>
+        </div>
+        <div>
+          <div>TFSA</div>
+          <ul>
+            <li>
+              <strong>The money in a TFSA grows tax-free.</strong> This means
+              that you don't pay taxes on the investment earnings, even when you
+              withdraw the money.
+            </li>
+            <li>
+              <strong>
+                You can withdraw the money from a TFSA at any time, without
+                penalty.
+              </strong>
+            </li>
+            <li>
+              <strong>
+                The contribution limit for TFSAs is set by the government and it
+                increases every year.
+              </strong>
+            </li>
+          </ul>
+        </div>
+      </>
+    ),
+  },
+  {
+    name: "New Immigrant & RRSP",
+    id: "new-immigrant",
+    description:
+      "As a new immigrant to Canada, you may be eligible to contribute to an RRSP. The rules for RRSP eligibility for new immigrants are complex, so it is important to speak to a financial advisor to determine if you are eligible.",
+    meta: (
+      <div>
+        <p>
+          Generally speaking, you are eligible to contribute to an RRSP if you
+          have lived in Canada for at least 183 days in the past calendar year.
+          However, there are some exceptions to this rule.
+        </p>
+        <p>
+          The maximum RRSP contribution limit for new immigrants is the same as
+          the maximum RRSP contribution limit for Canadian citizens and
+          permanent residents. For 2023, the maximum RRSP contribution limit is
+          $29,200 for individuals under 71 years old.
+        </p>
+
+        <p>
+          If you are a new immigrant and you are considering contributing to an
+          RRSP, it is important to speak to a financial advisor to get
+          personalized advice. We at Universal Insurance can help you determine
+          if you are eligible to contribute to an RRSP, and help you develop a
+          retirement savings plan that is right for you.
+        </p>
+      </div>
+    ),
   },
 ];
