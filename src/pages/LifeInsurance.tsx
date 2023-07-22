@@ -7,6 +7,7 @@ const LifeInsurance = () => {
   return (
     <>
       <HeroSection
+        from="lifeInsurance"
         imgSrc={familyPic}
         paragraph={
           <>
@@ -18,15 +19,13 @@ const LifeInsurance = () => {
               the future of your family
             </h1>
             <p className="text-secondary text-base pb-5">
-              We know that family is important, and it can be difficult to be
-              apart from your loved ones. If your parents or grandparents live
-              in another country, you may be interested in bringing them closer
-              to you by having them visit Canada. We at Universal Insurance can
-              help you with this
+              Life is unpredictable. But with life insurance, you can safeguard
+              what matters most. Your loved ones will be financially secure, no
+              matter what happens.
             </p>
           </>
         }
-        cta="Schedule a call with our agent >"
+        cta="Get a free quote"
       />
       <div className="relative px-10 lg:px-32 text-justify bg-breeze overflow-hidden">
         <div className="navbar-spacer invisible pt-20">navbar placeholder</div>

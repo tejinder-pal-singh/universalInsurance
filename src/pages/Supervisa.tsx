@@ -191,6 +191,7 @@ export const Supervisa = () => {
   return (
     <>
       <HeroSection
+        from="supervisa"
         paragraph={
           <>
             <h1 className=" text-secondary text-3xl break-normal">

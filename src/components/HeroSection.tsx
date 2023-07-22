@@ -6,9 +6,10 @@ interface IProps {
   paragraph: JSX.Element;
   cta: string;
   imgSrc: string;
+  from: string;
 }
 
-export function HeroSection({ cta, paragraph, imgSrc }: IProps) {
+export function HeroSection({ cta, paragraph, imgSrc, from }: IProps) {
   return (
     <>
       <div className="mobile  lg:hidden">
@@ -18,7 +19,7 @@ export function HeroSection({ cta, paragraph, imgSrc }: IProps) {
           <div className="paragraph px-10 lg:pl-32  backdrop-blur-sm py-4 my-auto ">
             {paragraph}
             <div>
-              <Link to={"/contact"}>
+              <Link to={"/contact"} state={{ from: from }}>
                 <Button className="cta text-white bg-secondary">{cta}</Button>
               </Link>
             </div>
