@@ -1,15 +1,48 @@
 import { Button } from "./Button";
 import { useLocation } from "react-router-dom";
-import React from "react";
-
+import * as Yup from "yup";
 import { Formik, Field, Form as Formi, FormikHelpers } from "formik";
-type Email = {
-  type: "example" | "sample";
+import { useQuery } from "../hooks/query";
+const SignupSchema = Yup.object().shape({
+  firstName: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  lastName: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  email: Yup.string().email("Invalid email").required("Required"),
+  message: Yup.string(),
+});
+
+export type Email = {
+  type:
+    | "general"
+    | "Life Insurance"
+    | "Super Visa Insurance"
+    | "Investments"
+    | "Travel Insurance";
   message: string;
 };
 const emailTemplates: Email[] = [
-  { type: "sample", message: "this is sample message" },
-  { type: "example", message: "this is sample message" },
+  {
+    type: "general",
+    message: "Im interested in hearing more about the services offered!",
+  },
+  { type: "Life Insurance", message: "Need a quote regarding Life insurance" },
+  {
+    type: "Super Visa Insurance",
+    message: "Need a quote regarding Super Visa Insurance",
+  },
+  {
+    type: "Investments",
+    message: "Need a quote for investment opportunities offered",
+  },
+  {
+    type: "Travel Insurance",
+    message: "Need a quote for Travel Insurance",
+  },
 ];
 
 interface Values {
@@ -17,24 +50,32 @@ interface Values {
   lastName: string;
   email: string;
   message: string;
-  subject: Email["type"];
+  subject: number;
 }
 
-export const Form = () => {
+export const Form = ({ type }: { type: Email["type"] }) => {
   const location = useLocation();
 
-  console.log(location, " useLocation Hook");
+  console.log(type);
 
   return (
     <div className="p-4 py-6 rounded-lg bg-white  md:p-8">
       <Formik
+        enableReinitialize={true}
         initialValues={{
           firstName: "",
           lastName: "",
           email: "",
-          message: "",
-          subject: "sample",
+          message:
+            type && !!emailTemplates.find((e) => e.type === type)?.message
+              ? emailTemplates.find((e) => e.type === type)?.message ?? ""
+              : emailTemplates[0].message,
+          subject:
+            type && emailTemplates.findIndex((e) => e.type === type)
+              ? emailTemplates.findIndex((e) => e.type === type)
+              : 0,
         }}
+        validationSchema={SignupSchema}
         onSubmit={(
           values: Values,
           { setSubmitting }: FormikHelpers<Values>
@@ -45,74 +86,99 @@ export const Form = () => {
           }, 500);
         }}
       >
-        <Formi>
-          <div className="-mx-2 md:items-center md:flex">
-            <div className="flex-1 px-2">
+        {(props) => (
+          <Formi>
+            <div className="-mx-2 md:items-center md:flex">
+              <div className="flex-1 px-2">
+                <label className="block mb-2 text-lg text-gray-600 dark:text-gray-200">
+                  First Name
+                </label>
+                {props.errors.firstName && props.touched.firstName ? (
+                  <div className="text-red">{props.errors.firstName}</div>
+                ) : null}
+                <Field
+                  autoFocus={true}
+                  name="firstName"
+                  type="text"
+                  placeholder="John "
+                  className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                />
+              </div>
+
+              <div className="flex-1 px-2 mt-4 md:mt-0">
+                <label className="block mb-2 text-lg text-gray-600 dark:text-gray-200">
+                  Last Name
+                </label>
+                {props.errors.lastName && props.touched.lastName ? (
+                  <div className="text-red">{props.errors.lastName}</div>
+                ) : null}
+                <Field
+                  name="lastName"
+                  type="text"
+                  placeholder="Doe"
+                  className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                />
+              </div>
+            </div>
+
+            <div className="mt-4">
               <label className="block mb-2 text-lg text-gray-600 dark:text-gray-200">
-                First Name
+                Email address
               </label>
+              {props.errors.email && props.touched.email ? (
+                <div className="text-red">{props.errors.email}</div>
+              ) : null}
               <Field
-                id="firstName"
-                type="text"
-                placeholder="John "
+                name="email"
+                type="email"
+                placeholder="johndoe@example.com"
                 className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
-
-            <div className="flex-1 px-2 mt-4 md:mt-0">
+            <div className="mt-4">
               <label className="block mb-2 text-lg text-gray-600 dark:text-gray-200">
-                Last Name
+                Subject
               </label>
+
               <Field
-                id="lastName"
-                type="text"
-                placeholder="Doe"
+                onChange={(e: { target: { value: number } }) => {
+                  props.handleChange(e);
+                  const value = e.target.value;
+                  console.log(e.target.value);
+                  props.setFieldValue("message", emailTemplates[value].message);
+                }}
+                name="subject"
+                as="select"
+                placeholder="johndoe@example.com"
                 className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+              >
+                {emailTemplates.map((e, i) => (
+                  <option key={e.type} value={i}>
+                    {e.type}
+                  </option>
+                ))}
+              </Field>
+            </div>
+
+            <div className="w-full mt-4">
+              <label className="block mb-2 text-lg text-gray-600 dark:text-gray-200">
+                Message
+              </label>
+              {props.errors.message && props.touched.message ? (
+                <div className="text-red">{props.errors.message}</div>
+              ) : null}
+              <Field
+                name="message"
+                as="textarea"
+                className="block w-full h-32 px-5 py-2.5 mt-2  bg-white border rounded-lg md:h-56 focus:outline-none focus:ring focus:ring-opacity-40"
+                placeholder="Message"
               />
             </div>
-          </div>
-
-          <div className="mt-4">
-            <label className="block mb-2 text-lg text-gray-600 dark:text-gray-200">
-              Email address
-            </label>
-            <Field
-              id="email"
-              type="email"
-              placeholder="johndoe@example.com"
-              className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-            />
-          </div>
-          <div className="mt-4">
-            <label className="block mb-2 text-lg text-gray-600 dark:text-gray-200">
-              Subject
-            </label>
-            <Field
-              id="subject"
-              type="select"
-              placeholder="johndoe@example.com"
-              className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-            >
-              <option value="sample">sample</option>
-              <option value="example">example</option>
-            </Field>
-          </div>
-
-          <div className="w-full mt-4">
-            <label className="block mb-2 text-lg text-gray-600 dark:text-gray-200">
-              Message
-            </label>
-            <Field
-              id="message"
-              type="textarea"
-              className="block w-full h-32 px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-56 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-              placeholder="Message"
-            />
-          </div>
-          <Button type="submit" className="w-full my-5 bg-primary text-white">
-            Send message
-          </Button>
-        </Formi>
+            <Button type="submit" className="w-full my-5 bg-primary text-white">
+              Send message
+            </Button>
+          </Formi>
+        )}
       </Formik>
     </div>
   );

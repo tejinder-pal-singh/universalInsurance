@@ -2,9 +2,8 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
-import { Variants, motion } from "framer-motion";
-import { Button } from "../components/Button";
-import { Form } from "../components/Form";
+import { Email, Form } from "../components/Form";
+import { useQuery } from "../hooks/query";
 
 //Edit company details
 export const companyDetails = {
@@ -14,32 +13,9 @@ export const companyDetails = {
   messenger: "https://www.google.com",
 };
 
-const revealParent: Variants = {
-  initial: { opacity: 0 },
-  animate: {
-    opacity: 1,
-    transition: {
-      ease: "easeInOut",
-      duration: 0.5,
-
-      when: "beforeChildren",
-    },
-  },
-};
-
-const revealChild: Variants = {
-  initial: { opacity: 0, y: 100 },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      ease: "easeInOut",
-      duration: 0.5,
-    },
-  },
-};
-
 export const Contact = () => {
+  const query = useQuery();
+  const type = query.get("type") as Email["type"];
   return (
     <section className="bg-neutral relative  overflow-hidden">
       <div className="blob absolute h-full w-full backdrop-blur-3xl z-10"></div>
@@ -137,14 +113,14 @@ export const Contact = () => {
                 onClick={() => {
                   window.open(`tel:${companyDetails.telephone}`);
                 }}
-                className="mt-2 hover:text-primary cursor-pointer text-lg text-blue-500 dark:text-blue-400  text-red hover:underline  hover:text-primary"
+                className="mt-2 hover:text-primary cursor-pointer text-lg text-blue-500 dark:text-blue-400  text-red hover:underline  "
               >
                 {companyDetails.telephone}
               </p>
             </div>
           </div>
 
-          <Form />
+          <Form type={type} />
         </div>
       </div>
     </section>
