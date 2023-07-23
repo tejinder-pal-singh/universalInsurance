@@ -13,6 +13,7 @@ import SupportIcon from "@mui/icons-material/Support";
 
 import ServiceInvestment from "../components/ServiceInvestment";
 import { HeroSection } from "../components/HeroSection";
+import { Link } from "react-router-dom";
 const tableData = [
   { q: "Are You Worried about COVID-19?", a: "Yes" },
   { q: "Do you have Health Card or Coverage through OHIP?", a: "No" },
@@ -191,7 +192,7 @@ export const Supervisa = () => {
   return (
     <>
       <HeroSection
-        from="supervisa"
+        from="Super Visa Insurance"
         paragraph={
           <>
             <h1 className=" text-secondary text-3xl break-normal">
@@ -336,9 +337,11 @@ export const Supervisa = () => {
               Monthly plans and how we can help you obtain the coverage you need
               at an affordable price.
             </p>
-            <Button className="bg-secondary text-white w-fit">
-              Contact us{" "}
-            </Button>
+            <Link to="/contact?type=Super Visa Insurance">
+              <Button className="bg-secondary text-white w-fit">
+                Contact us{" "}
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="text-large font-semibold">Hospital expenses</div>

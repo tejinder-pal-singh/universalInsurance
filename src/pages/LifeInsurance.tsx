@@ -3,11 +3,12 @@ import familyPic from "../assets/familybeach.jpg";
 import familySecure from "../assets/familylife.jpg";
 import { lifeInsuranceTypes } from "../data";
 import { Button } from "../components/Button";
+import { Link } from "react-router-dom";
 const LifeInsurance = () => {
   return (
     <>
       <HeroSection
-        from="lifeInsurance"
+        from="Life Insurance"
         imgSrc={familyPic}
         paragraph={
           <>
@@ -77,9 +78,11 @@ const LifeInsurance = () => {
                   <p className="text-lg">{e.description}</p>
                   {e.meta}
                   <div>
-                    <Button className="w-fit bg-secondary text-white">
-                      get a quote
-                    </Button>
+                    <Link to="/contact?type=Life Insurance">
+                      <Button className="w-fit bg-secondary text-white">
+                        get a quote
+                      </Button>
+                    </Link>
                   </div>
                 </div>
 

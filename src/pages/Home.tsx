@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <HeroSection
-        from="home"
+        from="general"
         paragraph={
           <>
             <h1 className=" text-3xl break-normal">
