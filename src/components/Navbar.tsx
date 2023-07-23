@@ -8,6 +8,8 @@ import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import { Button } from "./Button";
 import { companyDetails } from "../pages/Contact";
 import MenuItems from "./MenuItems";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import { HashLink } from "react-router-hash-link";
 import {
   investmentTypes,
@@ -227,7 +229,13 @@ const Navbar = () => {
               </Button>
             </div>
             <div>
-              <Button className="bg-secondary text-white"> Get a quote</Button>
+              <Link to="/contact">
+                {" "}
+                <Button className="bg-secondary text-white">
+                  {" "}
+                  Get a quote
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -303,6 +311,7 @@ function NavbarItems({
   const onCloseHandler = () => {
     setToggle(!isToggled);
   };
+
   return (
     <>
       <motion.div
@@ -312,36 +321,13 @@ function NavbarItems({
         exit="hidden"
         variants={navList}
       >
-        <div className="flex flex-col gap-9 text-3xl font-extralight ">
+        <div className="flex flex-col gap-9 text-2xl font-extralight ">
           {navbarLinks.map((item) => (
-            <motion.div
-              className="nav-item  active:text-secondary"
-              variants={navItem}
-              key={item.title}
-              onClick={onCloseHandler}
-            >
-              <Link to={item.url}>{item.title}</Link>
-              {item.submenu && (
-                <div className="pl-3 flex text-2xl flex-col">
-                  {item.submenu.map((l) => (
-                    <>
-                      <HashLink key={l.title} to={l.url}>
-                        {l.title}
-                      </HashLink>
-                      {l.submenu && (
-                        <div className="pl-3 flex text-xl flex-col">
-                          {l.submenu.map((k) => (
-                            <HashLink key={k.title} to={k.url}>
-                              {k.title}
-                            </HashLink>
-                          ))}
-                        </div>
-                      )}
-                    </>
-                  ))}
-                </div>
-              )}
-            </motion.div>
+            <NavbarMobileLink
+              depthLevel={0}
+              setToggle={setToggle}
+              link={item}
+            />
           ))}
         </div>
       </motion.div>
@@ -362,5 +348,73 @@ function NavbarLink({ link }: { link: any }) {
         <MenuItems items={link} key={0} depthLevel={0} />
       </ul>
     </motion.div>
+  );
+}
+
+//for smaller screens
+function NavbarMobileLink({
+  link,
+  depthLevel,
+  setToggle,
+}: {
+  link: any;
+  depthLevel: any;
+  setToggle: any;
+}) {
+  if (link.submenu) {
+    return (
+      <NavbarMobileLinkDropdown
+        setToggle={setToggle}
+        depthLevel={depthLevel}
+        link={link}
+      />
+    );
+  }
+  return (
+    <HashLink to={link.url} onClick={() => setToggle(false)}>
+      {" "}
+      <div className={`${depthLevel > 0 ? "text-large" : ""}`}>
+        {link.title}
+      </div>
+    </HashLink>
+  );
+}
+
+function NavbarMobileLinkDropdown({
+  link,
+  depthLevel,
+  setToggle,
+}: {
+  link: any;
+  depthLevel: any;
+  setToggle: any;
+}) {
+  const [isToggled, setIsToggled] = useState(false);
+  return (
+    <div className={`${depthLevel > 0 ? "text-large" : ""}`}>
+      <div className={`flex gap-4 `}>
+        <HashLink to={link.url} onClick={() => setToggle(false)}>
+          <div className="">{link.title}</div>
+        </HashLink>
+        <div onClick={() => setIsToggled((prev) => !prev)}>
+          {isToggled ? (
+            <ArrowDropUpIcon fontSize="large" />
+          ) : (
+            <ArrowDropDownIcon fontSize="large" />
+          )}
+        </div>
+      </div>
+      {link.submenu && isToggled && (
+        <>
+          {link.submenu.map((l: any) => (
+            <NavbarMobileLink
+              setToggle={setToggle}
+              depthLevel={depthLevel + 1}
+              link={l}
+            />
+          ))}
+        </>
+      )}
+    </div>
   );
 }

@@ -39,12 +39,12 @@ const MenuItems = ({ items, depthLevel }: { items: any; depthLevel: any }) => {
 
   return (
     <li
-      className={`relative  ${
+      className={`relative text-xl  ${
         depthLevel > 0
           ? "text-secondary hover:bg-secondary hover:text-white"
           : ["/"].includes(loc.pathname)
-          ? "text-white hover:text-yellow"
-          : "text-grey hover:text-secondary"
+          ? "lg:text-white lg:hover:text-yellow"
+          : "lg:text-grey lg:hover:text-secondary"
       }`}
       ref={ref}
       onMouseEnter={onMouseEnter}
@@ -55,7 +55,7 @@ const MenuItems = ({ items, depthLevel }: { items: any; depthLevel: any }) => {
         <>
           <button
             type="button"
-            className="text-left px-3 py-4"
+            className="text-left px-3 py-4 "
             aria-haspopup="menu"
             aria-expanded={dropdown ? "true" : "false"}
             onClick={() => setDropdown((prev) => !prev)}
