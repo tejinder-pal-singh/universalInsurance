@@ -321,6 +321,7 @@ function NavbarLink({ link }: { link: any }) {
         className="flex
   align-center
   flex-wrap
+ 
   list-none"
       >
         <MenuItems items={link} key={0} depthLevel={0} />

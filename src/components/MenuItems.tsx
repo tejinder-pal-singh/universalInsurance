@@ -39,7 +39,7 @@ const MenuItems = ({ items, depthLevel }: { items: any; depthLevel: any }) => {
 
   return (
     <li
-      className={`relative text-xl  ${
+      className={`relative   ${
         depthLevel > 0
           ? "text-secondary hover:bg-secondary hover:text-white"
           : ["/"].includes(loc.pathname)
