@@ -1,17 +1,6 @@
 import single from "../assets/single.jpeg";
 import supervisa from "../assets/supervisa.jpg";
-import travelInsurance from "../assets/travelinsurance.webp";
-import healthInsurance from "../assets/familyProtecting.png";
-import lifeInsurance from "../assets/healthinsurance.jpg";
-
-import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
-
-import AirplanemodeActiveIcon from "@mui/icons-material/AirplanemodeActive";
-
 import { Button } from "../components/Button";
-import SupportIcon from "@mui/icons-material/Support";
-
-import ServiceInvestment from "../components/ServiceInvestment";
 import { HeroSection } from "../components/HeroSection";
 import { Link } from "react-router-dom";
 const tableData = [
@@ -350,16 +339,6 @@ export const Supervisa = () => {
           <div>
             <div className="my-10  shadow overflow-hidden rounded">
               <table className=" bg-white">
-                {/*  <thead className="bg-secondary text-white">
-                        <tr>
-                          <th className="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">
-                            Name
-                          </th>
-                          <th className="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">
-                            Last name
-                          </th>
-                        </tr>
-                      </thead> */}
                 <tbody className=" divide-y-2">
                   {tableData.map((d, i) => (
                     <tr key={d.q} className={`${i % 2 == 0 && "bg-stone"}`}>

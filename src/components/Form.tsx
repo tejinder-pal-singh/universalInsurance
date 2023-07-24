@@ -1,8 +1,7 @@
 import { Button } from "./Button";
-import { useLocation } from "react-router-dom";
 import * as Yup from "yup";
 import { Formik, Field, Form as Formi, FormikHelpers } from "formik";
-import { useQuery } from "../hooks/query";
+
 const SignupSchema = Yup.object().shape({
   firstName: Yup.string()
     .min(2, "Too Short!")
@@ -54,8 +53,6 @@ interface Values {
 }
 
 export const Form = ({ type }: { type: Email["type"] }) => {
-  const location = useLocation();
-
   console.log(type);
 
   return (
