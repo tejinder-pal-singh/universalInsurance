@@ -302,6 +302,7 @@ function NavbarItems({
         <div className="flex flex-col gap-9 text-2xl font-extralight ">
           {navbarLinks.map((item) => (
             <NavbarMobileLink
+              key={item.title}
               depthLevel={0}
               setToggle={setToggle}
               link={item}
@@ -351,7 +352,6 @@ function NavbarMobileLink({
   }
   return (
     <HashLink to={link.url} onClick={() => setToggle(false)}>
-      {" "}
       <div className={`${depthLevel > 0 ? "text-large" : ""}`}>
         {link.title}
       </div>
@@ -387,6 +387,7 @@ function NavbarMobileLinkDropdown({
         <>
           {link.submenu.map((l: any) => (
             <NavbarMobileLink
+              key={l.title}
               setToggle={setToggle}
               depthLevel={depthLevel + 1}
               link={l}
