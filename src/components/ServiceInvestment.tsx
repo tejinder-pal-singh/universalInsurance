@@ -63,7 +63,7 @@ const ServiceInvestment = () => {
         </div>
       </div>
       <div className=" pb-10">
-        <Link to={"/contact"}>
+        <Link to={"/contact?type=Investments"}>
           <Button className="bg-secondary text-white"> Contact us</Button>
         </Link>
       </div>
@@ -83,7 +83,7 @@ const ServiceInvestment = () => {
               {i.meta}
             </div>
             <div className=" ">
-              <Link to={"/contact"}>
+              <Link to={"/contact?type=Investments"}>
                 <Button className="bg-secondary text-white"> Get Quote</Button>
               </Link>
             </div>

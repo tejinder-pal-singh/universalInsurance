@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import single from "../assets/single.jpeg";
 import { Button } from "../components/Button";
 
@@ -116,15 +117,17 @@ export const Services = () => {
                     </div>
                   )}
                   <div className="flex gap-4">
-                    <Button className="w-fit bg-secondary text-white">
-                      get a quote
-                    </Button>
+                    <Link to={`/contact?type=${e.name}`}>
+                      <Button className="w-fit bg-secondary text-white">
+                        get a quote
+                      </Button>
+                    </Link>
                     {e.learnMore && (
-                      <a href={`/${e.id}`}>
+                      <Link to={`/${e.id}`}>
                         <Button className="w-fit bg-primary text-white">
                           Learn More
                         </Button>
-                      </a>
+                      </Link>
                     )}
                   </div>
                 </div>
