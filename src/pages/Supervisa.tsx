@@ -362,7 +362,7 @@ export const Supervisa = () => {
                       </thead> */}
                 <tbody className=" divide-y-2">
                   {tableData.map((d, i) => (
-                    <tr className={`${i % 2 == 0 && "bg-stone"}`}>
+                    <tr key={d.q} className={`${i % 2 == 0 && "bg-stone"}`}>
                       <td className={`w-5/6 text-left py-3 px-4 `}>{d.q}</td>
                       <td className="w-1/6 text-left py-3 px-4">{d.a}</td>
                     </tr>
@@ -398,7 +398,10 @@ export const Supervisa = () => {
             </thead>
             <tbody className=" divide-y-2">
               {tableDataPrices.map((d, i) => (
-                <tr className={`${i % 2 == 0 && "bg-stone"}`}>
+                <tr
+                  key={d.insured + i}
+                  className={`${i % 2 == 0 && "bg-stone"}`}
+                >
                   <td className={`w-2/5 text-left py-3 px-4 `}>{d.service}</td>
                   <td className="w-1/5 text-left py-3 px-4">{d.insured}</td>
                   <td className={`w-1/5 text-left py-3 px-4 `}>
@@ -436,7 +439,10 @@ export const Supervisa = () => {
             </thead>
             <tbody className=" divide-y-2">
               {tableDataAcodomation.map((d, i) => (
-                <tr className={`${i % 2 == 0 && "bg-stone"}`}>
+                <tr
+                  key={d.insured + i}
+                  className={`${i % 2 == 0 && "bg-stone"}`}
+                >
                   <td className={`w-2/5 text-left py-3 px-4 `}>{d.service}</td>
                   <td className="w-1/5 text-left py-3 px-4">{d.insured}</td>
                   <td className={`w-1/5 text-left py-3 px-4 `}>
@@ -468,7 +474,10 @@ export const Supervisa = () => {
             </thead>
             <tbody className=" divide-y-2">
               {tableDataOut.map((d, i) => (
-                <tr className={`${i % 2 == 0 && "bg-stone"}`}>
+                <tr
+                  key={d.insured + i}
+                  className={`${i % 2 == 0 && "bg-stone"}`}
+                >
                   <td className={`w-2/5 text-left py-3 px-4 `}>{d.service}</td>
                   <td className="w-1/5 text-left py-3 px-4">{d.insured}</td>
                   <td className={`w-1/5 text-left py-3 px-4 `}>
@@ -514,7 +523,7 @@ export const Supervisa = () => {
               </thead>
               <tbody className=" divide-y-2">
                 {tableDataSize.map((d, i) => (
-                  <tr className={`${i % 2 == 0 && "bg-stone"}`}>
+                  <tr key={d.non + i} className={`${i % 2 == 0 && "bg-stone"}`}>
                     <td className={`w-1/3 text-left py-3 px-4 `}>
                       {d.service}
                     </td>

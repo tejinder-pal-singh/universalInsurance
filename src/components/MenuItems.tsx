@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Dropdown from "./Dropdown";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 
 const MenuItems = ({ items, depthLevel }: { items: any; depthLevel: any }) => {

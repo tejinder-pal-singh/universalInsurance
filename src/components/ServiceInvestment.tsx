@@ -73,6 +73,7 @@ const ServiceInvestment = () => {
       <div className="paragraph grid grid-cols-1 lg:grid-cols-2 justify-between gap-5 text-lg">
         {investmentTypes.map((i) => (
           <div
+            key={i.id}
             id={i.id}
             className="bg-white rounded-lg p-4 flex flex-col justify-between"
           >
