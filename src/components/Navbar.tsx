@@ -1,4 +1,4 @@
-import { AnimatePresence, Variants, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -113,23 +113,6 @@ const navContainer = {
     transition: {
       x: { velocity: 100 },
       duration: 0.3,
-    },
-  },
-};
-
-const navItem = {
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  hidden: {
-    y: 50,
-    opacity: 0,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
     },
   },
 };
@@ -302,16 +285,11 @@ export default Navbar;
 
 //for mobile
 function NavbarItems({
-  isToggled,
   setToggle,
 }: {
   isToggled: boolean;
   setToggle: (b: boolean) => void;
 }) {
-  const onCloseHandler = () => {
-    setToggle(!isToggled);
-  };
-
   return (
     <>
       <motion.div
