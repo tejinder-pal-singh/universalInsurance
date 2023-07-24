@@ -1,64 +1,7 @@
 import single from "../assets/single.jpeg";
 import { Link } from "react-router-dom";
 import { Button } from "./Button";
-import { Variants, motion } from "framer-motion";
-const revealParent: Variants = {
-  initial: { opacity: 0 },
-  animate: {
-    opacity: 1,
-    transition: {
-      ease: "easeInOut",
-      duration: 0.5,
 
-      when: "beforeChildren",
-    },
-  },
-};
-const staggerParent: Variants = {
-  initial: { opacity: 0 },
-  animate: {
-    opacity: 1,
-    transition: {
-      ease: "easeInOut",
-      duration: 0.5,
-
-      when: "beforeChildren",
-      staggerChildren: 0.5,
-    },
-  },
-};
-const revealChildLeft: Variants = {
-  initial: { x: -100, opacity: 0 },
-  animate: {
-    x: 0,
-
-    opacity: 1,
-    transition: {
-      ease: "easeInOut",
-      duration: 0.5,
-    },
-  },
-};
-const buttonReveal: Variants = {
-  initial: { opacity: 0, y: 10 },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: { ease: "easeInOut", duration: 0.5 },
-  },
-};
-const revealChildRight: Variants = {
-  initial: { x: 100, opacity: 0 },
-  animate: {
-    x: 0,
-
-    opacity: 1,
-    transition: {
-      ease: "easeInOut",
-      duration: 0.1,
-    },
-  },
-};
 export const SectionTwo = () => {
   return (
     <div
@@ -92,7 +35,7 @@ export const SectionTwo = () => {
           </div>
         </div>
         <div>
-          <Link to={"/contact"}>
+          <Link to={"/contact?type=Investments"}>
             <Button className=" w-fit  bg-primary text-white">
               Contact us
             </Button>
